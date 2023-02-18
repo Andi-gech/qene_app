@@ -1,5 +1,4 @@
 import bannericon from "./assets/logo.jpg";
-import profile from "./assets/profile.jpg";
 import Profile from "./profile";
 import Searchbar from "./searchbar";
 function Navbar() {

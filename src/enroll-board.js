@@ -2,8 +2,6 @@ import "./App.css";
 import Button from "./Button";
 import Tables from "./courseTable";
 import Coursetitle from "./Coursetitle";
-import Navbar from "./navbar";
-import Profile from "./profile";
 import Sidebanner from "./sidebanner";
 
 function Enrollbox() {

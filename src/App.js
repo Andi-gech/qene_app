@@ -1,6 +1,5 @@
 import "./App.css";
 
-import Enrollbox from "./enroll-board";
 import Navbar from "./navbar";
 
 function App() {
