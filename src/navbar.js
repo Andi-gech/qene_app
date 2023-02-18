@@ -7,7 +7,7 @@ function Navbar() {
     <div className="navbar">
       <div className="leftsidenavbar">
         <ul>
-          <img src={bannericon} />
+          <img src={bannericon} alt="logo" />
           <Searchbar />
           <li>Home</li>
           <li>Courses</li>
