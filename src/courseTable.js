@@ -1,22 +1,15 @@
-const Tables = () => {
+const Tables = ({ courseoutline }) => {
   return (
     <div className="tables">
       <table>
         <tr>
           <th>Course details</th>
         </tr>
-        <tr>
-          <td>what is django </td>
-        </tr>
-        <tr>
-          <td>django views </td>
-        </tr>
-        <tr>
-          <td>django templets</td>
-        </tr>
-        <tr>
-          <td>django url</td>
-        </tr>
+        {courseoutline.map((course) => (
+          <tr>
+            <td>{course.course_module_name}</td>
+          </tr>
+        ))}
       </table>
     </div>
   );

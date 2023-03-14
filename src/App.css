@@ -1,30 +1,866 @@
 body {
   text-align: center;
-  background-color: #0d1117;
-  color: #F0F6FC;
+  background-color: #fcf3f1;
+  color: #000000;
+  overflow: hidden;
+}
 
-  
-  
+/*hggggggggggggggggggggggggggggggggggggggggggggggg*/
+.Navbarmenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-inline: 20px;
+  color: #000000;
+}
+.Navbarmenu .Logoinfo {
+  display: flex;
+  flex-direction: row;
+}
+.Navbarmenu .Logoinfo p {
+  align-self: center;
+  font-weight: bold;
+  font-size: larger;
+}
+.Navbarmenu .Logoinfo img {
+  width: 60px;
+  height: 60px;
+}
+.Navbarmenu .Notification {
+  display: flex;
+  flex-direction: row;
 
-  
+  justify-content: space-between;
+  width: 60vw;
+}
+.Navbarmenu .Notification .input {
+  align-self: center;
+}
+.Navbarmenu .Notification .input input {
+  width: 500px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: rgba(218, 136, 136, 0.281) 0px 7px 29px 0px;
+}
+.Navbarmenu .Icons {
+  display: flex;
+  flex-direction: row;
+
+  margin-left: 10px;
+}
+.Navbarmenu .Icons .Icon {
+  margin-left: 25px;
+  align-self: center;
+}
+.Sidemenu {
+  margin-top: 10px;
+  width: 290px;
+  height: 89vh;
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.281) 0px 7px 29px 0px;
+
+  border-top-right-radius: 50px;
+}
+.Sidemenu .ProfileSidemenu img {
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  margin-top: 40px;
+}
+.Sidemenu .ProfileSidemenu h2 {
+  margin: 0;
+}
+.Sidemenu .ProfileSidemenu p {
+  margin: 0;
+  color: #a3a3a3;
+}
+
+.Sidemenu .Buttons-menu {
+  background-color: rgba(226, 226, 226, 0.575);
+  border-radius: 10px;
+  margin-inline: 50px;
+  margin-top: 30px;
+}
+.Sidemenu .Buttons-menu .menus {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.Sidemenu .Buttons-menu .menus .Menubutton {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  height: 30px;
+}
+
+.Sidemenu .Buttons-menu .menus a {
+  color: #4d4d4d;
+}
+.Menubutton:hover #menuicon {
+  color: red;
+}
+.Menubutton:hover:not(span, p) {
+  border-left: 2px solid red;
+
+  font-weight: bold;
+}
+.Sidemenu .Buttons-menu .menus .menuslink :hover {
+  border: 2px solid yellow;
+}
+
+.Menubutton p {
+  align-self: center;
+}
+#menuicon {
+  align-self: center;
+  margin-top: 5px;
+  margin-right: 10px;
+  margin-left: 40px;
+}
+
+.Menubutton :hover {
+  cursor: pointer;
+}
+.inlinesProfilebody {
+  display: flex;
+  flex-direction: row;
+}
+.HomeBody {
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 95vh;
+  overflow: scroll;
+
+  margin-left: 20px;
+}
+.HomebodyTitle h1 {
+  margin: 0;
+}
+.HomebodyTitle p {
+  color: rgb(204, 204, 204);
+  margin: 0px;
+}
+.SELEctors-full {
+  display: flex;
+  flex-direction: row;
+  margin-inline: 20px;
+  font-weight: bold;
+}
+.Selector-part {
+  display: flex;
+  flex-direction: row;
+  margin-right: 20vw;
+}
+.Selector-part p {
+  margin-right: 25px;
+}
+.See-all-button p {
+  color: white;
+  background-color: #ff7b7f;
+  height: 30px;
+  width: 80px;
+  border-radius: 20px;
+}
+.card-image {
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: rgb(100, 100, 111) 0px 7px 29px 0px;
+
+  margin-inline: 10px;
+}
+.card-image:hover {
+  box-shadow: #112349 0px 7px 29px 0px;
+}
+.Card-top {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  justify-content: space-between;
+
+  margin-top: 20px;
+  margin-inline: 20px;
+}
+.Card-top h4 {
+  font-size: 18px;
+
+  margin: 0px;
+}
+.Card-top p {
+  font-size: 12px;
+  margin: 0px;
+}
+.Card-bottom {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  margin-inline: 20px;
+}
+.Card-bottom img {
+  width: 40px;
+  height: 40px;
+  border-radius: 26px;
+}
+.Cardlist {
+  margin-inline: 20px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+.ProgressTitle {
+  margin-top: 10px;
+}
+.ProgressTitle h1 {
+  margin: 0;
+}
+.ProgressTitle p {
+  color: rgb(204, 204, 204);
+  margin: 0px;
+}
+.Progress-cards {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+  margin-bottom: 30px;
+  width: 65vw;
+}
+.Progress-cards .Notdata {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Notdata button {
+  width: 130px;
+  height: 40px;
+  background-color: #bdb8b9;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  color: rgb(0, 0, 0);
+  font-weight: 100;
+}
+.Loading {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  margin-top: 130px;
+}
+.IsError {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  margin-top: 90px;
+}
+.IsError p {
+  font-weight: bold;
+}
+.IsError img {
+  width: 320px;
+  height: 250px;
+}
+.IsError p {
+  color: red;
+}
+.Small-Progress-card {
+  margin-top: 10px;
+}
+.Smallprigressbarcard {
+  box-shadow: rgba(108, 108, 117, 0.37) 0px 7px 29px 0px;
+  width: 350px;
+  height: 100px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.Smallprigressbarcard:hover {
+  box-shadow: rgba(20, 20, 167, 0.61) 0px 7px 29px 0px;
+}
+.Smallprogressbar-image img {
+  width: 80px;
+  height: 80px;
+  margin-left: 20px;
+  border-radius: 20px;
+}
+.Smallprogressbar-title {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+.Smallprogressbar-title p {
+  margin: 0px;
+}
+.Smallprogressbar-title h4 {
+  margin: 0px;
+}
+.Smallprogressbar {
+  width: 80px;
+  margin-right: 15px;
+
+  margin-left: 20px;
+}
+.LargeProgressbar {
+  box-shadow: rgba(69, 69, 77, 0.37) 0px 7px 29px 0px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 350px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+}
+.LargeProgressTitle {
+  display: flex;
+  flex-direction: row;
+}
+.LargeprogressName {
+  display: flex;
+  flex-direction: column;
+}
+.LargeprogressName h4 {
+  margin: 0px;
+}
+.LargeprogressName p {
+  margin: 0px;
+  color: rgb(99, 96, 96);
+}
+.LargeProgressImage img {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+.Largeprogressbars {
+  width: 200px;
+  margin-bottom: 0px;
+}
+.Largeprogressbars h4 {
+  margin-top: -20px;
+}
+
+p {
+  margin-top: 0px;
+}
+.searchbdetailbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 900px;
+  height: 400px;
+}
+.Allcoursecards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 400px;
+  border-bottom: 1px solid rgb(177, 177, 177);
+  margin-top: 5px;
+}
+.Allcoursecards .Allcoursecardbutton:hover {
+  cursor: pointer;
+  background-color: #808080;
+}
+.Allcoursecards .Allcoursecardimage img {
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+}
+.Allcoursecardtext h4 {
+  margin: 0px;
+  padding: 0px;
+}
+.Allcoursecardtext p {
+  margin: 0px;
+  margin-left: 8px;
+  color: rgb(145, 142, 142);
+}
+.Allcoursecardtext {
+  align-self: center;
+}
+.Allcoursecards .Allcoursecardbutton {
+  align-self: center;
+  background-color: rgb(34, 34, 34);
+  width: 80px;
+  border-radius: 10px;
+  height: 40px;
+  color: white;
+}
+.Allcoursecards .Allcoursecardbutton p {
+  margin-top: 5px;
+}
+.Allcoursesbigcard {
+  width: 300px;
+  height: 350px;
+  box-shadow: rgba(191, 191, 192, 0.37) 0px 3px 20px 0px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.Allcoursesbigcard .coursepic {
+  align-self: center;
+}
+.Allcoursesbigcard .coursepic img {
+  width: 100px;
+  height: 100px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.detailtext {
+  text-align: start;
+}
+.detailtext h3,
+p {
+  margin: 0px;
+}
+.detailtext p {
+  color: rgb(129, 129, 129);
+}
+.inline-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 270px;
+  margin-top: 10px;
+}
+.Allcoursesbigcard .detailtext {
+  margin-left: 10px;
+}
+.HomeBody .Pagenos {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+.Pagenos .button {
+  background-color: #0f0f0f;
+  margin-right: 5px;
+  width: 20px;
+  height: 30px;
+  border-radius: 3px;
+}
+.Pagenos p {
+  padding-top: 5px;
+
+  color: white;
+}
+.Gradecard {
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-left: 10px;
+  border-bottom: 1px solid rgba(160, 160, 160, 0.404);
+}
+.Gradecard .Gradecardimage img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+}
+.Gradecard .Gradecardname {
+  align-self: center;
+}
+.Gradecard .Gradecardname h4 {
+  margin: 0px;
+}
+.Gradecard .Gradecardname p {
+  margin: 0px;
+  color: rgb(179, 176, 176);
+}
+.Gradecard .Gradeeyebutton {
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  background-color: #000000;
+  width: 90px;
+  color: white;
+  text-justify: center;
+  border-radius: 20px;
+  font-weight: bold;
+
+  height: 30px;
+}
+.Gradecard .Gradeeyebutton p {
+  margin-left: 20px;
+}
+.GradePercentage {
+  width: 80px;
+
+  align-self: center;
+}
+.Individualoutline {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.Individualoutlines {
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid wheat;
+  justify-content: space-between;
+  margin-left: 2px;
+}
+.Individualoutline p {
+  font-weight: bold;
+}
+.EnrollCard {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  justify-content: space-between;
+  width: 720px;
+}
+.EnrollCard .EnrollCard_image img {
+  width: 400px;
+  height: 400px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.Enrollcarddetail {
+  margin-top: 20px;
+  width: 300px;
+}
+.EnrollCard .Enrollcarddetail h1 {
+  margin: 0px;
+}
+.EnrollCard .Enrollcarddetail p {
+  color: rgb(116, 114, 114);
+}
+.EnrollCard .Enrollcarddetail .Courseoutline p {
+  font-weight: bold;
+  color: #000000;
+  margin-left: 2px;
+}
+.Enrollcarddetail .Courseoutline {
+  display: flex;
+  flex-direction: row;
+}
+.enrollbutton {
+  margin-top: 20px;
+}
+.enrollbutton button {
+  width: 110px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+}
+#disabled {
+  background-color: #51525123;
+  color: #000000;
+}
+.HomebodyTitles {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+#Select {
+  width: 190px;
+  margin-left: 20px;
+}
+.greetingbody {
+  width: 100%;
+  height: 100%;
+  margin-left: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 70px;
+}
+.greetingbody .Headings {
+  margin-left: 70px;
+  align-self: flex-start;
+}
+.greetingbody .paragraph {
+  width: 600px;
+  align-self: flex-start;
+  text-align: left;
+}
+.greetingbody .paragraph p {
+  text-align: justify;
+}
+.greetingbody .Complete {
+  align-self: flex-start;
+}
+.greetingbody .Video {
+  align-self: flex-start;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.greetingbody .Image {
+  align-self: flex-start;
+}
+.greetingbody .Image img {
+  width: 540px;
+  height: 250px;
+}
+.greetingbody .Codes {
+  width: 540px;
+}
+.Buttons {
+  margin-top: 30px;
+  margin-left: 150px;
+}
+.Buttons button {
+  width: 100px;
+  height: 40px;
+  background-color: #000000;
+  color: white;
+  font-weight: bold;
+  border-radius: 7px;
+}
+.Quiz_get_started {
+  align-self: center;
+  margin-left: 190px;
+  width: 500px;
+}
+.Quiz_get_started .Buttonstart {
+  margin-top: -10px;
+  margin-left: -130px;
+}
+.choice {
+  display: flex;
+  flex-direction: column;
+}
+.Answer {
+  display: flex;
+  flex-direction: row;
+}
+#mark {
+  font-size: 25px;
+  font-weight: bold;
+
+  width: 500px;
+  text-align: center;
+  margin: 10px;
+}
+#quiz {
+  text-align: justify;
+}
+.HomeBody .Eachquestion {
+  background-color: rgb(248, 248, 248);
+  margin-top: 10px;
+  box-shadow: rgba(108, 108, 117, 0.212) 0px 3px 9px 0px;
+  margin-left: 50px;
+}
+.Correction-true {
+  width: 500px;
+  height: 50px;
+  text-align: center;
+  font-weight: bold;
+  color: rgb(0, 226, 0);
+}
+.Correction-false {
+  width: 500px;
+  height: 50px;
+  text-align: center;
+  font-weight: bold;
+  color: rgb(221, 0, 0);
+}
+.Buttondiv {
+  margin-top: -20px;
+  margin-bottom: 30px;
+}
+.Loginbody .loginbox {
+  box-shadow: 2px 2px 2px 1px rgba(47, 1, 250, 0.336);
+  background-color: #ffffff;
+  width: 100%;
+}
+.Loginbody .loginbox .inputboxs {
+  display: flex;
+  flex-direction: column;
+  margin-left: 200px;
+}
+.RightLoginbody {
+  background-color: #000000;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.RightLoginbody img {
+  width: 500px;
+  height: 600px;
+}
+.loginbox .inputboxs {
+  height: 150px;
+  margin-top: 70px;
+}
+.loginbox .inputboxs .Individualbox {
+  display: inline-flex;
+  margin-top: 5px;
+}
+.loginbox .inputboxs .Individualbox p {
+  margin-top: 15px;
+}
+.inputboxs .Individualbox input {
+  height: 30px;
+  margin-top: 17px;
+  margin-left: 10px;
+  border-radius: 7px;
+  background-color: #303131;
+  color: white;
+}
+.inputboxs .button {
+  margin-top: 30px;
+  margin-left: -200px;
+}
+.inputboxs .button button:hover {
+  background-color: #0b3a5a;
+  cursor: pointer;
+}
+.inputboxs .button button {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+
+  width: 110px;
+  height: 40px;
+}
+.loginbox .header {
+  margin-top: 90px;
+  margin-left: -20px;
+}
+a {
+  text-decoration: none;
+  color: #e0dddd;
+}
+.Loginbody {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+  background-color: #0b3a5a;
+}
+.Notfond {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh*/
+.search {
+  color: white;
+}
+px .searchoutput {
+  margin: 200px;
+}
+.Homepages {
+  background-color: #fffaf9;
 }
 /* width */
 ::-webkit-scrollbar {
   width: 13px;
   padding-left: 10px;
-
 }
-
+.defaultbody {
+  margin-left: 330px;
+  width: 1000px;
+}
+.mycoursecard {
+  border: 2px solid tan;
+  width: 120px;
+  height: 50px;
+}
+.Sideboard {
+  width: 320px;
+  height: 700px;
+  position: fixed;
+  justify-content: center;
+  background: linear-gradient(to right, #0d1117, -42%, #0d1117 100%);
+}
 /* Track */
 ::-webkit-scrollbar-track {
   background: transparent;
-  
+}
+.startpage .buttons-start {
+  margin-left: 200px;
 }
 
+.startpage {
+  width: 500px;
+  margin-left: 40vh;
+
+  margin-bottom: 50px;
+}
+.pagination .page-link {
+  background-color: #161b22;
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  color: #e0dddd;
+  font-weight: bold;
+  border-radius: 2px;
+}
+.Paginator {
+  display: flex;
+  margin-left: 25vw;
+
+  flex-direction: row;
+}
+.pagination :active {
+  background-color: #313131;
+}
+
+.pagination {
+  margin-left: 10px;
+
+  margin-top: 20px;
+
+  align-content: center;
+  justify-content: center;
+  justify-self: center;
+
+  margin-bottom: 15px;
+}
+.flex-class {
+  display: flex;
+  flex-direction: row;
+}
+.startpage_img img {
+  width: 100%;
+  height: 200px;
+}
+.mainbody {
+  width: 1050px;
+  margin-top: 1px;
+}
+
+.flex-class ul h1 {
+  color: orange;
+}
+.flex-class ul li {
+  list-style: none;
+  background-color: #1b1030;
+  border: 1px dotted rgba(255, 255, 255, 0.288);
+
+  height: 35px;
+
+  margin-top: 10px;
+}
 /* Handle */
 ::-webkit-scrollbar-thumb {
   border: 1px solid rgb(184, 185, 185);
-  background: #161B22;
+  background: #161b22;
 }
 
 /* Handle on hover */
@@ -32,66 +868,63 @@ body {
   border: 1px solid rgb(0, 170, 255);
   background: #000000;
 }
-.rsidebanner{
+.rsidebanner {
   overflow-y: scroll;
   height: 550px;
   width: 880px;
-
 }
 
-.app{
+.app {
   padding-top: 0;
   margin: 0;
 }
-.Searchbox{
+.Searchbox {
   padding-top: 10px;
 }
-.Searchbox input{
-  background-color: #0D1117;
- 
-  border: 1px solid #30363D ;
+.Searchbox input {
+  background-color: #0d1117;
+  color: white;
+
+  border: 1px solid #30363d;
   height: 20px;
   padding-left: 10px;
 }
 
-.Sidebanner img{
- height: 90vh;
- width: 35vw;
- float: right;
- border-bottom-left-radius: 40px;
+.Sidebanner img {
+  height: 90vh;
+  width: 35vw;
+  float: right;
+  border-bottom-left-radius: 40px;
 }
-.navbar{
+.navbar {
   display: flex;
   flex-direction: row;
-  background-color: #161B22;
+  background-color: #161b22;
   justify-content: space-between;
- top: 0;
+  top: 0;
   position: sticky;
- 
-  
-  
-
 }
-.navbar .leftsidenavbar ul{
+.navbar .leftsidenavbar ul {
   margin: 5px;
 
   display: flex;
-
 }
-.navbar .leftsidenavbar ul li{
-  font-weight:500;
+
+.navbar .leftsidenavbar ul li {
+  color: #e0dddd;
+
+  font-weight: 500;
   margin-left: 15px;
-list-style: none;
-padding-top: 10px;
-
+  list-style: none;
+  padding-top: 10px;
 }
-.navbar .leftsidenavbar img{
+.navbar .leftsidenavbar img {
   margin-right: 20px;
   height: 50px;
   width: 50px;
   border-radius: 100px;
 }
-.navbar .rightsidenavbar ul{
+.navbar .rightsidenavbar ul {
   margin: 5px;
   margin-right: 30px;
   display: flex;
@@ -102,129 +935,115 @@ padding-top: 10px;
   flex-direction: row;
   justify-content: space-between;
 }
-#new{
+#new {
   border: 1px solid green;
   font-size: 16px;
   border-radius: 20px;
   width: 30px;
   background-color: green;
-  color: #F0F6FC;
+  color: #f0f6fc;
 }
 
-.profile  ul {
-  
+.profile ul {
   display: flex;
-  
-  
-
-  
-  
-  
 }
-.profile li{
+.profile li {
   margin-right: 10px;
   margin-top: 2px;
   list-style: none;
 }
-.profile img{
+.profile img {
   height: 30px;
   width: 30px;
   border-radius: 100px;
-  
 }
-#ppid{
-margin-top: -15px;
-margin-right: -20px;
-
+#ppid {
+  margin-top: -15px;
+  margin-right: -20px;
 }
-.topic h3{
+.topic h3 {
   font-size: 35px;
-  
-  color: rgba(255, 217, 0, 0.959);
 
-}#teacherprofile p{
+  color: rgba(255, 217, 0, 0.959);
+}
+#teacherprofile p {
   margin-right: -30px;
 }
-.Button{
+.Button {
   background: linear-gradient(to right, #00c500 -42%, #19ff0563 100%);
- 
+
   height: 32px;
   padding-top: 10px;
   width: 100px;
-  
+
   color: #ffffff;
   text-align: center;
   border-radius: 5px;
   font-weight: bold;
   margin-left: 10px;
 }
-.inlinebuttons p{
+.inlinebuttons p {
   margin-left: 25px;
   color: rgb(0, 162, 255);
 }
-.inlinebuttons{
+.inlinebuttons {
   margin-top: 10px;
   display: flex;
   justify-content: flex-start;
   margin-left: 150px;
-  
 }
-#teacherprofile{
+#teacherprofile {
   display: inline-flex;
- margin-left: 390px;
- margin-bottom: -15px;
- 
- width: 100px;
-  
+  margin-left: 390px;
+  margin-bottom: -15px;
+
+  width: 100px;
 }
-.prerequesttables{
-   margin-left: 145px;
-   width: 600px;
+.prerequesttables {
+  margin-left: 145px;
+  width: 600px;
   margin-top: 50px;
 }
 
 .tables table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
- 
+
   width: 100%;
 }
 
-.tables td, th {
+.tables td,
+th {
   border: 1px solid #272f3b;
   text-align: center;
   padding: 8px;
 }
 
 .tables tr:nth-child(even) {
-  background-color: #161B22;
+  background-color: #161b22;
 }
-.profilee{
-  background-color: #161B22;
+.profilee {
+  background-color: #161b22;
   height: 50px;
 }
 
-.topic{
+.topic {
   margin-left: 145px;
   margin-top: 50px;
   height: max-content;
   border: 1px solid rgba(255, 255, 255, 0.178);
   width: 600px;
 }
-.navbar .rightsidenavbar ul li{
- 
+.navbar .rightsidenavbar ul li {
   font-weight: 500;
 
-
-
-list-style: none;
-
+  list-style: none;
 }
-.navbar .leftsidenavbar ul li:hover{
+.navbar .leftsidenavbar ul li:hover {
   color: rgba(255, 255, 255, 0.753);
   cursor: pointer;
 }
-.navbar .rightsidenavbar ul li:hover{
+.navbar .rightsidenavbar ul li:hover {
   color: rgba(255, 255, 255, 0.753);
   cursor: pointer;
 }
