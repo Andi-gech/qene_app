@@ -27,22 +27,27 @@ function ProfileSidemenu() {
 
   return (
     <div className="Sidemenu">
-      <div className="ProfileSidemenu">
-        <img
-          src={
-            data?.profile_pic?.startsWith("http")
-              ? data.profile_pic
-              : `https://andigech.pythonanywhere.com${data.profile_pic}`
-          }
-          alt="logo"
-        />
-        <h2>{user?.username}</h2>
-        {user?.is_staff && (
-          <p>
-            Admin <FaWrench />
-          </p>
-        )}
-      </div>
+      {data && user && (
+        <>
+          <div className="ProfileSidemenu">
+            <img
+              src={
+                data?.profile_pic?.startsWith("http")
+                  ? data.profile_pic
+                  : `https://andigech.pythonanywhere.com${data.profile_pic}`
+              }
+              alt="logo"
+            />
+            <h2>{user?.username}</h2>
+            {user?.is_staff && (
+              <p>
+                Admin <FaWrench />
+              </p>
+            )}
+          </div>
+        </>
+      )}
+
       <div className="Buttons-menu">
         <div className="menus">
           <Link to={"courses"}>
