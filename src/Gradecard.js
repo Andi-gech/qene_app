@@ -37,7 +37,7 @@ function Gradecard({ id }) {
               src={
                 data.course_image.startsWith("http")
                   ? data.course_image
-                  : `http://127.0.0.1:8000${data.course_image}`
+                  : `https://andigech.pythonanywhere.com/${data.course_image}`
               }
             />
           </div>

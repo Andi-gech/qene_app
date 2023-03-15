@@ -14,7 +14,7 @@ function CourseCard({ name, coursepic, courseid, user }) {
             backgroundImage: `url(${
               coursepic.startsWith("http")
                 ? coursepic
-                : `http://127.0.0.1:8000${coursepic}`
+                : `https://andigech.pythonanywhere.com${coursepic}`
             })`,
             backgroundSize: "cover",
             height: 200,
@@ -31,7 +31,7 @@ function CourseCard({ name, coursepic, courseid, user }) {
               src={
                 data.profile_pic.startsWith("http")
                   ? data.profile_pic
-                  : `http://127.0.0.1:8000${data.profile_pic}`
+                  : `https://andigech.pythonanywhere.com${data.profile_pic}`
               }
             />
           </div>

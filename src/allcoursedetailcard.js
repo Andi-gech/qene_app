@@ -8,7 +8,7 @@ function Allcoursesdetailcard({ name, Profilepic }) {
           src={
             Profilepic.startsWith("http")
               ? Profilepic
-              : `http://127.0.0.1:8000${Profilepic}`
+              : `https://andigech.pythonanywhere.com${Profilepic}`
           }
         />
       </div>

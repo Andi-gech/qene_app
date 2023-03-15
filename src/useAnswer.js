@@ -7,7 +7,7 @@ export default function useAnswerdata(courseid, outlineid, quizid, quesionid) {
 
   const fetchcourse = async (courseid) => {
     const res = await axios.get(
-      `http://127.0.0.1:8000/courses/${courseid}/outline/${outlineid}/quize/${quizid}/question/${quesionid}/answer`,
+      `https://andigech.pythonanywhere.com/courses/${courseid}/outline/${outlineid}/quize/${quizid}/question/${quesionid}/answer`,
       {
         headers: { Authorization: authHeader() },
       }

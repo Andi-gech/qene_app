@@ -7,7 +7,7 @@ export default function useCoursehook(pageno) {
 
   const fetchcourse = async (pageno) => {
     const res = await axios.get(
-      `http://127.0.0.1:8000/courses/?page=${pageno}`,
+      `https://andigech.pythonanywhere.com/courses/?page=${pageno}`,
       {
         headers: { Authorization: authHeader() },
       }

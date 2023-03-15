@@ -30,9 +30,9 @@ function ProfileSidemenu() {
         <div className="ProfileSidemenu">
           <img
             src={
-              data.profile_pic.startsWith("http")
+              data.profile_pic?.startsWith("http")
                 ? data.profile_pic
-                : `https://res.cloudinary.com/dlrx3l1zp/${data.profile_pic}`
+                : `https://andigech.pythonanywhere.com${data.profile_pic}`
             }
             alt="logo"
           />

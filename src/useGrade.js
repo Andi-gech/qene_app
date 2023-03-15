@@ -6,7 +6,7 @@ export default function useGradedata() {
   const authHeader = useAuthHeader();
 
   const fetchcourse = async () => {
-    const res = await axios.get(`http://127.0.0.1:8000/grades/`, {
+    const res = await axios.get(`https://andigech.pythonanywhere.com/grades/`, {
       headers: { Authorization: authHeader() },
     });
 

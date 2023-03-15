@@ -7,7 +7,7 @@ export default function useSearchCoursehook(searchinput) {
 
   const fetchcourse = async (searchinput) => {
     const res = await axios.get(
-      `http://127.0.0.1:8000/courses/?search=${searchinput}`,
+      `https://andigech.pythonanywhere.com/courses/?search=${searchinput}`,
       {
         headers: { Authorization: authHeader() },
       }

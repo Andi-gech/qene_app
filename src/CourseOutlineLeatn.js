@@ -43,7 +43,7 @@ function CourseoutlineLearn({
                   src={
                     detail.image_content.startsWith("http")
                       ? detail.image_content
-                      : `http://127.0.0.1:8000${detail.image_content}`
+                      : `https://andigech.pythonanywhere.com${detail.image_content}`
                   }
                 />
               </div>

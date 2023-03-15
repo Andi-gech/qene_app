@@ -34,7 +34,7 @@ function Smallprogressbar({ courseid }) {
               src={
                 course.course_image.startsWith("http")
                   ? course.course_image
-                  : `http://127.0.0.1:8000${course.course_image}`
+                  : `https://andigech.pythonanywhere.com${course.course_image}`
               }
             />
           </div>

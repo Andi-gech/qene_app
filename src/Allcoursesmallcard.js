@@ -12,7 +12,7 @@ function Allcoursescard({ onmouseover, onmouseout, name, profilepic, id }) {
           src={
             profilepic.startsWith("http")
               ? profilepic
-              : `http://127.0.0.1:8000${profilepic}`
+              : `https://andigech.pythonanywhere.com/${profilepic}`
           }
         />
       </div>

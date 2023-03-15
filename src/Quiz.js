@@ -30,7 +30,7 @@ function Quiz() {
     // Make the request
 
     axios
-      .post("http://127.0.0.1:8000/completedmodule/", {
+      .post("https://andigech.pythonanywhere.com//completedmodule/", {
         courseoutlinee: pk,
       })
       .then((response) => {

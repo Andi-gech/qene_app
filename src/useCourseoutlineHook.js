@@ -7,7 +7,7 @@ export default function useCourseOutlinehook(courseid) {
 
   const fetchcourse = async (courseid) => {
     const res = await axios.get(
-      `http://127.0.0.1:8000/courses/${courseid}/outline`,
+      `https://andigech.pythonanywhere.com/courses/${courseid}/outline`,
       {
         headers: { Authorization: authHeader() },
       }

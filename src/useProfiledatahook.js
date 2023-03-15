@@ -6,9 +6,12 @@ export default function useProfilehook(teacherid) {
   const authHeader = useAuthHeader();
 
   const fetchProfile = async (teacherid) => {
-    const res = await axios.get(`http://127.0.0.1:8000/profile/${teacherid}`, {
-      headers: { Authorization: authHeader() },
-    });
+    const res = await axios.get(
+      `https://andigech.pythonanywhere.com/profile/${teacherid}`,
+      {
+        headers: { Authorization: authHeader() },
+      }
+    );
     console.log("dd");
     return res.data;
   };

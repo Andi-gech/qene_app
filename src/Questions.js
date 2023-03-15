@@ -48,7 +48,7 @@ function Questions({ id, pk, quizid }) {
     // Make the request
 
     axios
-      .post("http://127.0.0.1:8000/grades/", {
+      .post("https://andigech.pythonanywhere.com/grades/", {
         courseoutlines: pk,
         course: id,
         percent: percent,

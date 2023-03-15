@@ -14,7 +14,7 @@ function Login() {
   const [jasons, setjasons] = useState({});
   const fetchData = async () => {
     const res = await axios
-      .post("http://127.0.0.1:8000/auth/jwt/create/", jasons)
+      .post("https://andigech.pythonanywhere.com/auth/jwt/create/", jasons)
       .then((res) => {
         signin({
           token: res.data.access,

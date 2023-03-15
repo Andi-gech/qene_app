@@ -6,9 +6,12 @@ export default function useIndividualcoursehook(courseid) {
   const authHeader = useAuthHeader();
 
   const fetchcourse = async (courseid) => {
-    const res = await axios.get(`http://127.0.0.1:8000/courses/${courseid}`, {
-      headers: { Authorization: authHeader() },
-    });
+    const res = await axios.get(
+      `https://andigech.pythonanywhere.com/courses/${courseid}`,
+      {
+        headers: { Authorization: authHeader() },
+      }
+    );
     console.log("dd");
     return res.data;
   };

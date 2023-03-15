@@ -30,7 +30,7 @@ function Enrolling() {
     // Make the request
 
     axios
-      .post("http://127.0.0.1:8000/mycourse/", {
+      .post("https://andigech.pythonanywhere.com/mycourse/", {
         course: id,
       })
       .then((response) => {
@@ -55,7 +55,7 @@ function Enrolling() {
               src={
                 course.course_image.startsWith("http")
                   ? course.course_image
-                  : `http://127.0.0.1:8000${course.course_image}`
+                  : `https://andigech.pythonanywhere.com${course.course_image}`
               }
             />
           </div>
