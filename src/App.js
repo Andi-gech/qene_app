@@ -172,32 +172,34 @@ function App() {
               setclicked(!clicked);
             }}
           />
-          {clicked && !(location.pathname === "/login") && (
-            <div className="navbartab">
-              <Link to="/">
-                <p>Home</p>
-              </Link>
+          {clicked &&
+            !(location.pathname === "/login") &&
+            !(location.pathname === "/signup") && (
+              <div className="navbartab">
+                <Link to="/">
+                  <p>Home</p>
+                </Link>
 
-              <Link to={"courses"}>
-                <p>All Course</p>
-              </Link>
-              <Link to={"grade"}>
-                <p>Grade</p>
-              </Link>
-              <Link>
-                <p>Project</p>
-              </Link>
-              <Link>
-                <p>Discusion</p>
-              </Link>
-              <Link to={"editprofile"}>
-                <p>EditProfile </p>
-              </Link>
-              <Link onClick={signOut}>
-                <p>SignOut</p>
-              </Link>
-            </div>
-          )}
+                <Link to={"courses"}>
+                  <p>All Course</p>
+                </Link>
+                <Link to={"grade"}>
+                  <p>Grade</p>
+                </Link>
+                <Link>
+                  <p>Project</p>
+                </Link>
+                <Link>
+                  <p>Discusion</p>
+                </Link>
+                <Link to={"editprofile"}>
+                  <p>EditProfile </p>
+                </Link>
+                <Link onClick={signOut}>
+                  <p>SignOut</p>
+                </Link>
+              </div>
+            )}
 
           <Routes>
             <Route exact path="/login" element={<LoginMobile />} />
