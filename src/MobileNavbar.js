@@ -10,13 +10,44 @@ function MobileNavbar({ onclick }) {
   const [clicked, setclicked] = useState("");
   const { data, isError, error, isFetching, refech } = useProfilehook("me");
 
-  if (location.pathname === "/login" || location.pathname === "/signup") {
+  if (
+    matchPath(
+      {
+        path: "/login",
+        exact: true,
+      },
+      location.pathname
+    ) ||
+    matchPath(
+      {
+        path: "/signup",
+        exact: true,
+      },
+      location.pathname
+    )
+  ) {
     return null;
   }
   var pathname = "";
-  if (location.pathname === "/") {
+  if (
+    matchPath(
+      {
+        path: "/",
+        exact: true,
+      },
+      location.pathname
+    )
+  ) {
     pathname = "Mycourse";
-  } else if (location.pathname === "/courses") {
+  } else if (
+    matchPath(
+      {
+        path: "/courses",
+        exact: true,
+      },
+      location.pathname
+    )
+  ) {
     pathname = "ALLcourse";
   } else if (
     matchPath(
