@@ -7,6 +7,7 @@ import useQuestiondata from "./useQuestion";
 import MobileAnswer from "./Mobile-Answer";
 import { FaCheckCircle } from "react-icons/fa";
 import Mobilebutton from "./mobileButtogreen";
+import Loadingcomponent from "./LoadingComponent";
 
 function MobileQuizQuestions({ id, pk, quizid }) {
   const [correctd, setcorrect] = useState({});
@@ -43,7 +44,7 @@ function MobileQuizQuestions({ id, pk, quizid }) {
     setcompleted(true);
   };
 
-  const { data: question } = useQuestiondata(id, pk, quizid);
+  const { data: question, isLoading } = useQuestiondata(id, pk, quizid);
   const Post = (percent) => {
     axios.defaults.headers.common["Authorization"] = authHeader();
 
@@ -103,6 +104,9 @@ function MobileQuizQuestions({ id, pk, quizid }) {
         </div>
       </div>
     );
+  }
+  if (isLoading) {
+    <Loadingcomponent />;
   }
 }
 export default MobileQuizQuestions;

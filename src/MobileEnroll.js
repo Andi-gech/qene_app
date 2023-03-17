@@ -4,6 +4,7 @@ import { FaCheckCircle, FaCircleNotch } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 
 import CourseProfile from "./CourseProfilemobile";
+import Loadingcomponent from "./LoadingComponent";
 import Mobilebutton from "./mobileButtogreen";
 import useCourseOutlinehook from "./useCourseoutlineHook";
 import useMycoursedata from "./usefetchmycoursehook";
@@ -72,6 +73,11 @@ function MobileEnroll() {
         </div>
       </div>
     );
+  }
+  if (isLoad || isLoading) {
+    <div className="MobileCourseList">
+      <Loadingcomponent />
+    </div>;
   }
 }
 export default MobileEnroll;

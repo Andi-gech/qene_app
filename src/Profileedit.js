@@ -146,7 +146,7 @@ function ProfileEdit() {
           />
         </div>
         <div className="Mobilesignupbutton">
-          <Mobilebutton name={"Signup"} onclick={handleSubmit} />
+          <Mobilebutton name={"edit"} onclick={handleSubmit} />
         </div>
       </div>
     );

@@ -35,6 +35,7 @@ import { useState } from "react";
 import MobilGradeReport from "./MobileGradeREport";
 import SignUpMobileComponent from "./Signupcomponent";
 import LoginMobile from "./Loginmobile";
+import SignUppcComponent from "./SignupForpc";
 
 function App() {
   const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
@@ -58,6 +59,7 @@ function App() {
 
             <Routes>
               <Route exact path="/login" element={<Login />} />
+              <Route exact path="/signup" element={<SignUppcComponent />} />
               <Route
                 exact
                 path="/"
@@ -147,6 +149,15 @@ function App() {
                 element={
                   <RequireAuth loginPath="/login">
                     <Search />
+                  </RequireAuth>
+                }
+              />
+
+              <Route
+                path="/editprofile"
+                element={
+                  <RequireAuth loginPath="/login">
+                    <ProfileEdit />
                   </RequireAuth>
                 }
               />
@@ -245,6 +256,15 @@ function App() {
               element={
                 <RequireAuth loginPath="/login">
                   <ProfileEdit />
+                </RequireAuth>
+              }
+            />
+            <Route
+              exact
+              path="/*"
+              element={
+                <RequireAuth loginPath="/login">
+                  <NOTfound />
                 </RequireAuth>
               }
             />

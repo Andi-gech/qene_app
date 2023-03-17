@@ -12,6 +12,7 @@ import {
 } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import bannericon from "./assets/code.jpg";
+import profile_pic from "./assets/user-image-.png";
 import { useSignOut } from "react-auth-kit";
 import useProfilehook from "./useProfiledatahook";
 import useUserhook from "./useUser";
@@ -30,7 +31,7 @@ function ProfileSidemenu() {
   const { data, isError, error, isFetching, refech } = useProfilehook("me");
   const [search, setsearch] = useState();
   const { isLoading, data: user, status } = useUserhook("me");
-  if (location.pathname === "/login") {
+  if (location.pathname === "/login" || location.pathname === "/signup") {
     return null;
   }
 
@@ -41,14 +42,16 @@ function ProfileSidemenu() {
           {data && user && (
             <>
               <div className="ProfileSidemenu">
-                <img
-                  src={
-                    data?.profile_pic?.startsWith("http")
-                      ? data.profile_pic
-                      : `https://andigech.pythonanywhere.com${data.profile_pic}`
-                  }
-                  alt="logo"
-                />
+                {data?.profile_pic && (
+                  <img
+                    src={
+                      data?.profile_pic.startsWith("http")
+                        ? data?.profile_pic
+                        : `https://andigech.pythonanywhere.com${data?.profile_pic}`
+                    }
+                  />
+                )}
+                {!data?.profile_pic && <img src={profile_pic} />}
                 <h2>{user?.username}</h2>
                 {user?.is_staff && (
                   <p>
@@ -104,6 +107,15 @@ function ProfileSidemenu() {
                   </span>
 
                   <p>Discusion</p>
+                </div>
+              </Link>
+              <Link to={"/editprofile"}>
+                <div className="Menubutton">
+                  <span id="menuicon">
+                    <FaSignOutAlt />
+                  </span>
+
+                  <p>edit profile</p>
                 </div>
               </Link>
               <Link onClick={() => signOut()}>

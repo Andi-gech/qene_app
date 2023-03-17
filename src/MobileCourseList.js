@@ -3,6 +3,7 @@ import Errrorcomponent from "./errorComponent";
 import Loadingcomponent from "./LoadingComponent";
 import useCoursehook from "./useCoursedata";
 import { useState } from "react";
+import { isError } from "react-query";
 
 function Mobilecourselistview() {
   const [url, seturl] = useState(1);
@@ -48,6 +49,11 @@ function Mobilecourselistview() {
         </div>
       </div>
     );
+  }
+  if (isLoading) {
+    <div className="MobileCourseList">
+      <Loadingcomponent />
+    </div>;
   }
 }
 

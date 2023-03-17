@@ -26,7 +26,7 @@ function Navbarmenu() {
   const isPortrait = useMediaQuery({ query: "(orientation: portrait)" });
   const isRetina = useMediaQuery({ query: "(min-resolution: 2dppx)" });
 
-  if (location.pathname === "/login") {
+  if (location.pathname === "/login" || location.pathname === "/signup") {
     return null;
   }
 
