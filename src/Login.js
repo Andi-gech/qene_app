@@ -8,6 +8,7 @@ import login from "./assets/logo.jpg";
 function Login() {
   const isAuthenticated = useIsAuthenticated();
   const [eror, seterror] = useState();
+
   const [userame, setuserName] = useState("");
   const [password, setpassword] = useState("");
   const signin = useSignIn();
@@ -89,7 +90,7 @@ function Login() {
               )}
               <div className="button">
                 <button type="submit">Login</button>
-                <Link to="/sigsdasnup">
+                <Link to="/signup">
                   <p
                     style={{
                       color: "grey",

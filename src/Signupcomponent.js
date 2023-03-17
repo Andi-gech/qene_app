@@ -5,10 +5,12 @@ import { useIsAuthenticated } from "react-auth-kit";
 import { Link, Navigate } from "react-router-dom";
 import vid from "./assets/s.jpg";
 import login from "./assets/logo.jpg";
+import Mobilebutton from "./mobileButtogreen";
 
 function SignUpMobileComponent() {
   const isAuthenticated = useIsAuthenticated();
   const [eror, seterror] = useState();
+  const [createed, setcreated] = useState(false);
   const [userame, setuserName] = useState("");
   const [firstname, setFirstName] = useState("");
   const [Lastname, setLastName] = useState("");
@@ -16,11 +18,15 @@ function SignUpMobileComponent() {
   const [password, setpassword] = useState("");
   const signin = useSignIn();
   const [jasons, setjasons] = useState({});
-  const fetchData = async () => {
+  const fetchData = async (jasonss) => {
+    console.log(jasonss, "jasonsss");
     const res = await axios
-      .post("https://andigech.pythonanywhere.com/auth/users/", jasons)
+      .post("https://andigech.pythonanywhere.com/auth/users/", jasonss)
       .then((res) => {
         console.log("dd", res);
+        if (res.status === 201) {
+          setcreated(true);
+        }
       })
       .catch((error) => seterror(error.response.data));
   };
@@ -28,16 +34,14 @@ function SignUpMobileComponent() {
   const handleSubmit = (event) => {
     console.log("handleSubmit ran");
     event.preventDefault();
-    setjasons({
+
+    fetchData({
       username: userame,
       password: password,
       email: Email,
       first_name: firstname,
       last_name: Lastname,
     });
-
-    fetchData();
-    console.log(jasons);
   };
   if (isAuthenticated()) {
     return <Navigate to="/" />;
@@ -47,7 +51,13 @@ function SignUpMobileComponent() {
         <h2>WELLCOME TO QENE</h2>
         <div className="Sign-upbox">
           <h3>Signup</h3>
-          <form onSubmit={handleSubmit}>
+          {createed && (
+            <div className="create-indicator">
+              <p>Account created</p>
+            </div>
+          )}
+
+          <form>
             <div className="MobileEachInput">
               <p>firstname</p>
               <input
@@ -59,19 +69,7 @@ function SignUpMobileComponent() {
                 value={firstname}
               />
             </div>
-            {eror?.firstname && (
-              <p
-                style={{
-                  fontSize: 12,
-                  color: "red",
-                  width: "70vw",
-
-                  textAlign: "justify",
-                }}
-              >
-                {eror.firstname}
-              </p>
-            )}
+            {eror?.firstname && <p id="errors-signup">{eror.firstname}</p>}
             <div className="MobileEachInput">
               <p>Lastname</p>
               <input
@@ -83,19 +81,7 @@ function SignUpMobileComponent() {
                 value={Lastname}
               />
             </div>
-            {eror?.Lastname && (
-              <p
-                style={{
-                  fontSize: 12,
-                  color: "red",
-                  width: "70vw",
-
-                  textAlign: "justify",
-                }}
-              >
-                {eror.Lastname}
-              </p>
-            )}
+            {eror?.Lastname && <p id="errors-signup">{eror.Lastname}</p>}
             <div className="MobileEachInput">
               <p>Email adress</p>
               <input
@@ -107,19 +93,7 @@ function SignUpMobileComponent() {
                 value={Email}
               />
             </div>
-            {eror?.email && (
-              <p
-                style={{
-                  fontSize: 12,
-                  color: "red",
-                  width: "70vw",
-
-                  textAlign: "justify",
-                }}
-              >
-                {eror.email}
-              </p>
-            )}
+            {eror?.email && <p id="errors-signup">{eror.email}</p>}
             <div className="MobileEachInput">
               <p>username</p>
               <input
@@ -131,19 +105,7 @@ function SignUpMobileComponent() {
                 value={userame}
               />
             </div>
-            {eror?.username && (
-              <p
-                style={{
-                  fontSize: 12,
-                  color: "red",
-                  width: "70vw",
-
-                  textAlign: "justify",
-                }}
-              >
-                {eror.username}
-              </p>
-            )}
+            {eror?.username && <p id="errors-signup">{eror.username}</p>}
             <div className="MobileEachInput">
               <p>password</p>
               <input
@@ -155,21 +117,13 @@ function SignUpMobileComponent() {
                 value={password}
               />
             </div>
-            {eror?.password && (
-              <p
-                style={{
-                  fontSize: 12,
-                  color: "red",
-                  width: "70vw",
-
-                  textAlign: "justify",
-                }}
-              >
-                {eror.password}
-              </p>
-            )}
-
-            <button type="submit">Login</button>
+            {eror?.password && <p id="errors-signup">{eror.password[0]}</p>}
+            <div className="Mobilesignupbutton">
+              <Mobilebutton name={"Signup"} onclick={handleSubmit} />
+              <Link to={"/login"}>
+                <p>already have account?</p>
+              </Link>
+            </div>
           </form>
         </div>
       </div>
