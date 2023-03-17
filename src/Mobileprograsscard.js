@@ -1,48 +1,33 @@
 import { CircularProgressbar } from "react-circular-progressbar";
-
-import "react-circular-progressbar/dist/styles.css";
 import { Link } from "react-router-dom";
+import Loadingcomponent from "./LoadingComponent";
 import useCompletemodule from "./useCompletedmodule";
 import useCourseOutlinehook from "./useCourseoutlineHook";
-
 import useIndividualcoursehook from "./useIndividualcoursehook";
-function Smallprogressbar({ courseid }) {
-  const { data: course } = useIndividualcoursehook(courseid);
-  const { data, isError, error, isFetching, refech } =
-    useCourseOutlinehook(courseid);
+
+function MobileProgrsscard({ course_id }) {
+  const { data: course } = useIndividualcoursehook(course_id);
+  const { data, isError, error, isFetching, refech, isLoading } =
+    useCourseOutlinehook(course_id);
 
   const { data: completed } = useCompletemodule();
-  var sum = 0;
-  const filter = data?.map((course) => {
-    if (completed?.some((item) => item.courseoutlinee === course.id)) {
-      sum = sum + 1;
-    }
-  });
-  const count = () => {
-    if (sum == 0) {
-      return 0;
-    }
-    return (sum / data?.length).toFixed(2) * 100;
-  };
-  console.log(count());
-  if (course) {
+  if (course && data && completed) {
+    var sum = 0;
+    const filter = data?.map((course) => {
+      if (completed?.some((item) => item.courseoutlinee === course.id)) {
+        sum = sum + 1;
+      }
+    });
+    const count = () => {
+      if (sum == 0) {
+        return 0;
+      }
+      return (sum / data?.length).toFixed(2) * 100;
+    };
     return (
       <Link to={`/courses/${course.id}`}>
-        <div className="Smallprigressbarcard">
-          <div className="Smallprogressbar-image">
-            <img
-              src={
-                course.course_image.startsWith("http")
-                  ? course.course_image
-                  : `https://andigech.pythonanywhere.com/${course.course_image}`
-              }
-            />
-          </div>
-          <div className="Smallprogressbar-title">
-            <h4>{course.Course_name}</h4>
-            <p>..........</p>
-          </div>
-          <div className="Smallprogressbar">
+        <div className="Mobile-course-progress">
+          <div className="circularProgress">
             <CircularProgressbar
               value={count()}
               text={`${count()} % `}
@@ -59,21 +44,31 @@ function Smallprogressbar({ courseid }) {
                   strokeLinecap: "butt",
                   transform: "rotate(-126deg)",
                   transformOrigin: "center center",
-                  stroke: "#FF7B77",
+                  stroke: "green",
                   transition: "stroke-dashoffset 2.5s ease 0s",
                 },
                 text: {
-                  fill: "#ddd",
+                  fill: "black",
                   fontWeight: "bold",
                 },
               }}
               strokeWidth={10}
             />
           </div>
+          <div className="MobileprogresscardcourseTitle">
+            {course.Course_name}
+          </div>
         </div>
       </Link>
     );
   }
+  if (isLoading) {
+    return (
+      <div className="MobileLearnBoard">
+        <Loadingcomponent />
+      </div>
+    );
+  }
 }
 
-export default Smallprogressbar;
+export default MobileProgrsscard;

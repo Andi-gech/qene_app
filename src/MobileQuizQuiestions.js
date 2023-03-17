@@ -1,11 +1,14 @@
 import axios from "axios";
 import { useState } from "react";
+import { useAuthHeader } from "react-auth-kit";
+import Code from "./code";
 import Answer from "./Answer";
 import useQuestiondata from "./useQuestion";
-import { useAuthHeader } from "react-auth-kit";
-import Buttons from "./Buttons";
-import { FaCheck, FaCheckCircle, FaCross, FaCrosshairs } from "react-icons/fa";
-function Questions({ id, pk, quizid }) {
+import MobileAnswer from "./Mobile-Answer";
+import { FaCheckCircle } from "react-icons/fa";
+import Mobilebutton from "./mobileButtogreen";
+
+function MobileQuizQuestions({ id, pk, quizid }) {
   const [correctd, setcorrect] = useState({});
   const [mark, setmark] = useState(0);
   const [completed, setcompleted] = useState();
@@ -61,32 +64,18 @@ function Questions({ id, pk, quizid }) {
         // Handle errors
       });
   };
-
   if (question) {
     return (
-      <div className="HomeBody" id="quiz">
+      <div className="QuizQuestions">
         <form>
-          {completed && (
-            <p
-              id="mark"
-              style={{
-                color: "green",
-              }}
-            >
-              You Got {mark}%
-            </p>
-          )}
+          {completed && <p id="result">You Got {mark}%</p>}
           {question.map((questions, index) => (
-            <div className="Eachquestion">
-              <h2
-                style={{
-                  fontWeight: "bolder",
-                }}
-              >
+            <div className="mobile-each-questions">
+              <p id="Questions">
                 {index + 1} {questions.text}
-              </h2>
-
-              <Answer
+              </p>
+              {questions.code && <Code code={questions.code} />}
+              <MobileAnswer
                 onData={handleChildData}
                 id={id}
                 pk={pk}
@@ -95,23 +84,25 @@ function Questions({ id, pk, quizid }) {
                 questionid={questions.id}
               />
               {completed && Object.values(correctd)[index] && (
-                <div className="Correction-true">
+                <div className="Mobile-Correction-true">
                   <FaCheckCircle />
                   Yes you got it Right!!
                 </div>
               )}
               {completed && !Object.values(correctd)[index] && (
-                <div className="Correction-false">your answer is false</div>
+                <div className="Mobile-Correction-false">
+                  your answer is false
+                </div>
               )}
             </div>
           ))}
         </form>
-        <div className="Buttondiv">
-          {!completed && <Buttons name={"submit"} onChange={final} />}
-          {completed && <Buttons name={"submitted"} onChange={final} />}
+        <div className="MobileButton-Submit">
+          {!completed && <Mobilebutton name={"Submit"} onclick={final} />}
+          {completed && <Mobilebutton name={"Submited"} />}
         </div>
       </div>
     );
   }
 }
-export default Questions;
+export default MobileQuizQuestions;
