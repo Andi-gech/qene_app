@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useAuthHeader } from "react-auth-kit";
 import { useParams } from "react-router-dom";
+import Loadingcomponent from "./LoadingComponent";
 import Mobilebutton from "./mobileButtogreen";
 import MobileQuizQuestions from "./MobileQuizQuiestions";
 import Questions from "./Questions";
@@ -10,7 +11,7 @@ import useQuizdata from "./useQuizdata";
 function MobileQuizboard() {
   const { id, pk } = useParams();
   const [ready, setready] = useState(false);
-  const { data: quiz } = useQuizdata(id, pk);
+  const { data: quiz, isLoading } = useQuizdata(id, pk);
   const authHeader = useAuthHeader();
   const Setcompleted = () => {
     axios.defaults.headers.common["Authorization"] = authHeader();
@@ -30,34 +31,41 @@ function MobileQuizboard() {
         // Handle errors
       });
   };
+  if (quiz) {
+    return (
+      <div className="MobileQuizboard">
+        {!ready && (
+          <div className="are-you-sure">
+            <p>
+              Are You sure once you there there is
+              <br /> <strong>no turning back</strong>
+            </p>
+            <Mobilebutton
+              name={"Start"}
+              onclick={() => {
+                setready(true);
+                Setcompleted();
+              }}
+            />
+          </div>
+        )}
 
-  return (
-    <div className="MobileQuizboard">
-      {!ready && (
-        <div className="are-you-sure">
-          <p>
-            Are You sure once you there there is
-            <br /> <strong>no turning back</strong>
-          </p>
-          <Mobilebutton
-            name={"Start"}
-            onclick={() => {
-              setready(true);
-              Setcompleted();
-            }}
-          />
-        </div>
-      )}
-
-      {ready && (
-        <div>
-          {quiz.map((quiz) => (
-            <MobileQuizQuestions id={id} pk={pk} quizid={quiz.id} />
-          ))}
-        </div>
-      )}
-    </div>
-  );
+        {ready && (
+          <div>
+            {quiz.map((quiz, index) => (
+              <MobileQuizQuestions
+                id={id}
+                pk={pk}
+                quizid={quiz.id}
+                index={index}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  } else if (isLoading) {
+    return <Loadingcomponent />;
+  }
 }
-
 export default MobileQuizboard;

@@ -5,7 +5,7 @@ import CourseCard from "./CourseCard";
 import Errrorcomponent from "./errorComponent";
 import LargeProgressbar from "./LargeProgressbar";
 import Loadingcomponent from "./LoadingComponent";
-import SimpleProgressbox from "./SmallProgressBox";
+
 import Smallprogressbar from "./SmallProgresscard";
 import useCoursehook from "./useCoursedata";
 import useMycoursedata from "./usefetchmycoursehook";

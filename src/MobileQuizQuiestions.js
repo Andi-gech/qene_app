@@ -9,7 +9,7 @@ import { FaCheckCircle } from "react-icons/fa";
 import Mobilebutton from "./mobileButtogreen";
 import Loadingcomponent from "./LoadingComponent";
 
-function MobileQuizQuestions({ id, pk, quizid }) {
+function MobileQuizQuestions({ id, pk, quizid, index }) {
   const [correctd, setcorrect] = useState({});
   const [mark, setmark] = useState(0);
   const [completed, setcompleted] = useState();
@@ -104,9 +104,8 @@ function MobileQuizQuestions({ id, pk, quizid }) {
         </div>
       </div>
     );
-  }
-  if (isLoading) {
-    <Loadingcomponent />;
+  } else if (isLoading && index == 0) {
+    return <Loadingcomponent />;
   }
 }
 export default MobileQuizQuestions;

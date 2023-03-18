@@ -1,20 +1,12 @@
 import "./App.css";
-import Enrollbox from "./enroll-board";
-import Homepage from "./Homepage";
-import LearningBoard from "./Learningboard";
-import My_course from "./Mycourses";
+
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 
-import Navbar from "./navbar";
-import CourseList from "./CourseList";
-import { useParams } from "react-router-dom";
 import Login from "./Login";
 import { RequireAuth, useSignOut } from "react-auth-kit";
-import Routef from "./Routes";
+
 import Quiz from "./Quiz";
-import Grades from "./Grade";
-import Search from "./Search";
-import Home from "./HOME";
+
 import Navbarmenu from "./NAVBAR-menu";
 import ProfileSidemenu from "./ProfileSidemenu";
 import HomeBody from "./HomeBody";
@@ -105,14 +97,6 @@ function App() {
               />
 
               <Route
-                path="/Learn"
-                element={
-                  <RequireAuth loginPath="/login">
-                    <LearningBoard />
-                  </RequireAuth>
-                }
-              />
-              <Route
                 path="/courses"
                 element={
                   <RequireAuth loginPath="/login">
@@ -141,14 +125,6 @@ function App() {
                 element={
                   <RequireAuth loginPath="/login">
                     <GradeReport />
-                  </RequireAuth>
-                }
-              />
-              <Route
-                path="/search/:searchinput"
-                element={
-                  <RequireAuth loginPath="/login">
-                    <Search />
                   </RequireAuth>
                 }
               />

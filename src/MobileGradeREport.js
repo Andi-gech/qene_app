@@ -10,21 +10,25 @@ function MobilGradeReport() {
     return (
       <div className="MobilGradeReport">
         Your Grade
-        {data.map((course) => (
-          <Mobilegradecards id={course.course} />
+        {data.map((course, index) => (
+          <Mobilegradecards index={index} id={course.course} />
         ))}
       </div>
     );
   }
   if (isLoading) {
-    <div className="MobilGradeReport">
-      <Loadingcomponent />
-    </div>;
+    return (
+      <div className="MobilGradeReport">
+        <Loadingcomponent />
+      </div>
+    );
   }
   if (error) {
-    <div className="MobilGradeReport">
-      <Errrorcomponent error={error} />
-    </div>;
+    return (
+      <div className="MobilGradeReport">
+        <Errrorcomponent error={error} />
+      </div>
+    );
   }
 }
 

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useAuthHeader } from "react-auth-kit";
 import { useParams } from "react-router-dom";
-import Tables from "./courseTable";
+
 import useCourseOutlinehook from "./useCourseoutlineHook";
 import useMycoursedata from "./usefetchmycoursehook";
 import useIndividualcoursehook from "./useIndividualcoursehook";

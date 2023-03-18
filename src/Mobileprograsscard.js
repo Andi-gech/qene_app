@@ -5,12 +5,13 @@ import useCompletemodule from "./useCompletedmodule";
 import useCourseOutlinehook from "./useCourseoutlineHook";
 import useIndividualcoursehook from "./useIndividualcoursehook";
 
-function MobileProgrsscard({ course_id }) {
-  const { data: course } = useIndividualcoursehook(course_id);
+function MobileProgrsscard({ course_id, index }) {
+  const { data: course, isLoading: isload } =
+    useIndividualcoursehook(course_id);
   const { data, isError, error, isFetching, refech, isLoading } =
     useCourseOutlinehook(course_id);
 
-  const { data: completed } = useCompletemodule();
+  const { data: completed, isLoading: load } = useCompletemodule();
   if (course && data && completed) {
     var sum = 0;
     const filter = data?.map((course) => {
@@ -61,13 +62,8 @@ function MobileProgrsscard({ course_id }) {
         </div>
       </Link>
     );
-  }
-  if (isLoading) {
-    return (
-      <div className="MobileLearnBoard">
-        <Loadingcomponent />
-      </div>
-    );
+  } else if ((isLoading || isload || load) && index == 0) {
+    return <Loadingcomponent />;
   }
 }
 

@@ -1,4 +1,6 @@
 import { FaLine } from "react-icons/fa";
+import Errrorcomponent from "./errorComponent";
+import Loadingcomponent from "./LoadingComponent";
 import Mobilebutton from "./mobileButtogreen";
 import MobileProgrsscard from "./Mobileprograsscard";
 import useMycoursedata from "./usefetchmycoursehook";
@@ -9,7 +11,7 @@ function Homebodymobile({ onclick }) {
     data: mycoursedata,
     isError: mycourser,
     error: Mycourseerror,
-    isLoading: ismycourseLoading,
+    isLoading,
   } = useMycoursedata();
 
   if (mycoursedata) {
@@ -25,11 +27,23 @@ function Homebodymobile({ onclick }) {
         )}
         {mycoursedata?.length > 0 && (
           <div className="MobilecardList">
-            {mycoursedata.map((course) => (
-              <MobileProgrsscard course_id={course.course} />
+            {mycoursedata.map((course, index) => (
+              <MobileProgrsscard course_id={course.course} index={index} />
             ))}
           </div>
         )}
+      </div>
+    );
+  } else if (isLoading) {
+    return (
+      <div className="Mycourse-mobile">
+        <Loadingcomponent />
+      </div>
+    );
+  } else if (Mycourseerror) {
+    return (
+      <div className="Mycourse-mobile">
+        <Errrorcomponent error={Mycourseerror} />
       </div>
     );
   }

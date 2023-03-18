@@ -34,13 +34,14 @@ function Mobilecourselistview() {
         </div>
         <div className="MobileListcards">
           <div>
-            {data.results.map((course) => (
+            {data.results.map((course, index) => (
               <Mobilecourscard
                 key={course.id}
                 user={course.Teacher}
                 name={course.Course_name}
                 coursepic={course.course_image}
                 courseid={course.id}
+                index={index}
               />
             ))}
           </div>
@@ -51,9 +52,11 @@ function Mobilecourselistview() {
     );
   }
   if (isLoading) {
-    <div className="MobileCourseList">
-      <Loadingcomponent />
-    </div>;
+    return (
+      <div className="MobileCourseList">
+        <Loadingcomponent />
+      </div>
+    );
   }
 }
 

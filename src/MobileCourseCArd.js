@@ -1,9 +1,10 @@
 import { FaPlayCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import bannericon from "./assets/code.jpg";
+import Loadingcomponent from "./LoadingComponent";
 import useProfilehook from "./useProfiledatahook";
-function Mobilecourscard({ name, coursepic, courseid, user }) {
-  const { data, isError, error, isFetching, refech } = useProfilehook(user);
+function Mobilecourscard({ name, coursepic, courseid, user, index }) {
+  const { data, isError, error, isLoading, refech } = useProfilehook(user);
 
   if (data) {
     return (
@@ -38,6 +39,8 @@ function Mobilecourscard({ name, coursepic, courseid, user }) {
         </div>
       </Link>
     );
+  } else if (isLoading && index == 0) {
+    return <Loadingcomponent />;
   }
 }
 export default Mobilecourscard;

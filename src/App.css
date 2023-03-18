@@ -101,11 +101,7 @@ body {
 .Menubutton:hover #menuicon {
   color: red;
 }
-.Menubutton:hover:not(span, p) {
-  border-left: 2px solid red;
 
-  font-weight: bold;
-}
 .Sidemenu .Buttons-menu .menus .menuslink :hover {
   border: 2px solid yellow;
 }
@@ -508,13 +504,7 @@ p {
   flex-direction: row;
   justify-content: space-between;
 }
-.Individualoutlines {
-  display: flex;
-  flex-direction: row;
-  border-top: 1px solid wheat;
-  justify-content: space-between;
-  margin-left: 2px;
-}
+
 .Individualoutline p {
   font-weight: bold;
 }
@@ -758,126 +748,11 @@ a {
   justify-content: center;
 }
 /*hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh*/
-.search {
-  color: white;
-}
-px .searchoutput {
-  margin: 200px;
-}
+
 .Homepages {
   background-color: #fffaf9;
 }
 /* width */
-::-webkit-scrollbar {
-  width: 13px;
-  padding-left: 10px;
-}
-.defaultbody {
-  margin-left: 330px;
-  width: 1000px;
-}
-.mycoursecard {
-  border: 2px solid tan;
-  width: 120px;
-  height: 50px;
-}
-.Sideboard {
-  width: 320px;
-  height: 700px;
-  position: fixed;
-  justify-content: center;
-  background: linear-gradient(to right, #0d1117, -42%, #0d1117 100%);
-}
-/* Track */
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-.startpage .buttons-start {
-  margin-left: 200px;
-}
-
-.startpage {
-  width: 500px;
-  margin-left: 40vh;
-
-  margin-bottom: 50px;
-}
-.pagination .page-link {
-  background-color: #161b22;
-  width: 30px;
-  height: 30px;
-  margin: 5px;
-  color: #e0dddd;
-  font-weight: bold;
-  border-radius: 2px;
-}
-.Paginator {
-  display: flex;
-  margin-left: 25vw;
-
-  flex-direction: row;
-}
-.pagination :active {
-  background-color: #313131;
-}
-
-.pagination {
-  margin-left: 10px;
-
-  margin-top: 20px;
-
-  align-content: center;
-  justify-content: center;
-  justify-self: center;
-
-  margin-bottom: 15px;
-}
-.flex-class {
-  display: flex;
-  flex-direction: row;
-}
-.startpage_img img {
-  width: 100%;
-  height: 200px;
-}
-.mainbody {
-  width: 1050px;
-  margin-top: 1px;
-}
-
-.flex-class ul h1 {
-  color: orange;
-}
-.flex-class ul li {
-  list-style: none;
-  background-color: #1b1030;
-  border: 1px dotted rgba(255, 255, 255, 0.288);
-
-  height: 35px;
-
-  margin-top: 10px;
-}
-/* Handle */
-::-webkit-scrollbar {
-  width: 0.5vw;
-}
-::-webkit-scrollbar-thumb {
-  border: 1px solid transparent;
-  background: rgb(129, 128, 128);
-  width: 5px;
-
-  border-radius: 16px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: rgb(129, 128, 128);
-}
-.rsidebanner {
-  overflow-y: scroll;
-  height: 550px;
-  width: 880px;
-}
 
 .app {
   padding-top: 0;
@@ -901,71 +776,20 @@ px .searchoutput {
   float: right;
   border-bottom-left-radius: 40px;
 }
-.navbar {
-  display: flex;
-  flex-direction: row;
-  background-color: #161b22;
-  justify-content: space-between;
-  top: 0;
-  position: sticky;
-}
-.navbar .leftsidenavbar ul {
-  margin: 5px;
 
-  display: flex;
-}
-
-.navbar .leftsidenavbar ul li {
-  color: #e0dddd;
-
-  font-weight: 500;
-  margin-left: 15px;
-  list-style: none;
-  padding-top: 10px;
-}
 .navbar .leftsidenavbar img {
   margin-right: 20px;
   height: 50px;
   width: 50px;
   border-radius: 100px;
 }
-.navbar .rightsidenavbar ul {
-  margin: 5px;
-  margin-right: 30px;
-  display: flex;
-  padding-top: 10px;
-}
-.course-body {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-#new {
-  border: 1px solid green;
-  font-size: 16px;
-  border-radius: 20px;
-  width: 30px;
-  background-color: green;
-  color: #f0f6fc;
-}
 
-.profile ul {
-  display: flex;
-}
-.profile li {
-  margin-right: 10px;
-  margin-top: 2px;
-  list-style: none;
-}
 .profile img {
   height: 30px;
   width: 30px;
   border-radius: 100px;
 }
-#ppid {
-  margin-top: -15px;
-  margin-right: -20px;
-}
+
 .topic h3 {
   font-size: 35px;
 
@@ -991,67 +815,7 @@ px .searchoutput {
   margin-left: 25px;
   color: rgb(0, 162, 255);
 }
-.inlinebuttons {
-  margin-top: 10px;
-  display: flex;
-  justify-content: flex-start;
-  margin-left: 150px;
-}
-#teacherprofile {
-  display: inline-flex;
-  margin-left: 390px;
-  margin-bottom: -15px;
 
-  width: 100px;
-}
-.prerequesttables {
-  margin-left: 145px;
-  width: 600px;
-  margin-top: 50px;
-}
-
-.tables table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-
-  width: 100%;
-}
-
-.tables td,
-th {
-  border: 1px solid #272f3b;
-  text-align: center;
-  padding: 8px;
-}
-
-.tables tr:nth-child(even) {
-  background-color: #161b22;
-}
-.profilee {
-  background-color: #161b22;
-  height: 50px;
-}
-
-.topic {
-  margin-left: 145px;
-  margin-top: 50px;
-  height: max-content;
-  border: 1px solid rgba(255, 255, 255, 0.178);
-  width: 600px;
-}
-.navbar .rightsidenavbar ul li {
-  font-weight: 500;
-
-  list-style: none;
-}
-.navbar .leftsidenavbar ul li:hover {
-  color: rgba(255, 255, 255, 0.753);
-  cursor: pointer;
-}
-.navbar .rightsidenavbar ul li:hover {
-  color: rgba(255, 255, 255, 0.753);
-  cursor: pointer;
-}
 /*kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkdddddddddjkjfkjfjf*/
 .Mobile-navbar {
   display: flex;
@@ -1183,9 +947,7 @@ th {
   text-align: justify;
   margin-bottom: 10px;
 }
-#MobileSelect {
-  width: 170px;
-}
+
 .MobileLearncontentimage img {
   width: 100%;
   height: 200px;
@@ -1576,6 +1338,23 @@ th {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 .ProfileImage {
   height: 140px;
