@@ -75,9 +75,11 @@ function MobileEnroll() {
     );
   }
   if (isLoad || isLoading) {
-    <div className="MobileCourseList">
-      <Loadingcomponent />
-    </div>;
+    return (
+      <div className="MobileCourseList">
+        <Loadingcomponent />
+      </div>
+    );
   }
 }
 export default MobileEnroll;
