@@ -163,12 +163,7 @@ function App() {
                 <Link to={"grade"}>
                   <p>Grade</p>
                 </Link>
-                <Link>
-                  <p>Project</p>
-                </Link>
-                <Link>
-                  <p>Discusion</p>
-                </Link>
+
                 <Link to={"editprofile"}>
                   <p>EditProfile </p>
                 </Link>
