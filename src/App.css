@@ -838,21 +838,21 @@ a {
 }
 .navbar-menu-button {
   align-self: center;
-  font-size: 43px;
-  font-weight: bold;
+  font-size: 33px;
 }
-
+#name {
+  align-self: flex-start;
+  justify-self: center;
+  border: none;
+  margin-top: -10px;
+  font-weight: normal;
+  color: rgb(105, 105, 105);
+}
 .navbar-menu-Title {
   align-self: center;
   font-weight: bold;
 }
-.navbar-menu-button img {
-  width: 45px;
-  height: 45px;
-  border-radius: 25px;
 
-  margin-top: 13px;
-}
 .Mycourse-mobile {
   background-color: white;
   height: 90vh;
@@ -1179,7 +1179,11 @@ a {
   animation-name: navbaranima;
   animation-duration: 1s;
 }
-
+.navbartab img {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
 .navbartab p {
   font-weight: bold;
   display: flex;
@@ -1203,13 +1207,20 @@ a {
   flex-direction: column;
   align-items: center;
 }
-.Mobilegradecards {
-  background-color: #fcfcfc;
-  height: 100px;
-  width: 100%;
+.MobileGradecardswithoutline {
   box-shadow: rgba(108, 108, 117, 0.37) 0px 7px 29px 0px;
-
+  width: 95%;
   display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.Mobilegradecards {
+  display: flex;
+
   flex-direction: row;
   justify-content: space-between;
   padding-left: 6px;
@@ -1220,7 +1231,10 @@ a {
 .Mobilegradecards img {
   width: 90px;
   height: 90px;
-  border-radius: 50px;
+  border-radius: 10px;
+
+  margin-bottom: 10px;
+
   align-self: center;
 }
 .Mobilegradecards p {
@@ -1235,19 +1249,21 @@ a {
   align-self: center;
 }
 .outline-grade {
-  background-color: #fcfcfc;
-  width: 100%;
   padding-left: 6px;
   padding-right: 6px;
   margin-top: 10px;
-  border-radius: 20px;
-  box-shadow: rgba(108, 108, 117, 0.37) 0px 7px 29px 0px;
+  color: rgb(255, 255, 255);
+
+  background-color: rgba(20, 17, 32, 0.822);
 }
 .outline-grade .Individualoutlineee {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-left: 5px;
+
+  align-items: center;
+  height: 50px;
   margin-right: 5px;
   border-bottom: 1px solid gainsboro;
 }
@@ -1279,9 +1295,8 @@ a {
   flex-direction: column;
 }
 .Sign-upbox {
-  box-shadow: rgba(108, 108, 117, 0.37) 0px 7px 29px 0px;
   width: 97vw;
-  height: 65vh;
+  height: 55vh;
   display: flex;
   flex-direction: column;
 }

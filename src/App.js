@@ -6,6 +6,7 @@ import Login from "./Login";
 import { RequireAuth, useSignOut } from "react-auth-kit";
 
 import Quiz from "./Quiz";
+import profile_pic from "./assets/user-image-.png";
 
 import Navbarmenu from "./NAVBAR-menu";
 import ProfileSidemenu from "./ProfileSidemenu";
@@ -28,6 +29,7 @@ import MobilGradeReport from "./MobileGradeREport";
 import SignUpMobileComponent from "./Signupcomponent";
 import LoginMobile from "./Loginmobile";
 import SignUppcComponent from "./SignupForpc";
+import Navbartab from "./Navbartab";
 
 function App() {
   const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
@@ -38,7 +40,7 @@ function App() {
     query: "(min-width: 1224px)",
   });
   const [clicked, setclicked] = useState(false);
-  const signOut = useSignOut();
+
   const location = useLocation();
 
   return (
@@ -151,27 +153,7 @@ function App() {
 
           {clicked &&
             !(location.pathname === "/login") &&
-            !(location.pathname === "/signup") && (
-              <div className="navbartab">
-                <Link to="/">
-                  <p>Home</p>
-                </Link>
-
-                <Link to={"courses"}>
-                  <p>All Course</p>
-                </Link>
-                <Link to={"grade"}>
-                  <p>Grade</p>
-                </Link>
-
-                <Link to={"editprofile"}>
-                  <p>EditProfile </p>
-                </Link>
-                <Link onClick={signOut}>
-                  <p>SignOut</p>
-                </Link>
-              </div>
-            )}
+            !(location.pathname === "/signup") && <Navbartab />}
 
           <Routes>
             <Route exact path="/login" element={<LoginMobile />} />

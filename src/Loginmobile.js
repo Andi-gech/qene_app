@@ -43,7 +43,7 @@ function LoginMobile() {
       <div className="Signupcomponent">
         <h2>WELLCOME TO QENE</h2>
         <div className="Sign-upbox">
-          <h3>Signup</h3>
+          <h3>LOGIN</h3>
 
           <form>
             <div className="MobileEachInput">
@@ -71,7 +71,7 @@ function LoginMobile() {
             </div>
             {eror?.detail && <p id="errors-signup">{eror.detail}</p>}
             <div className="Mobilesignupbutton">
-              <Mobilebutton name={"Signup"} onclick={handleSubmit} />
+              <Mobilebutton name={"Login"} onclick={handleSubmit} />
               <Link to={"/Signup"}>
                 <p>Donthave have account?</p>
               </Link>

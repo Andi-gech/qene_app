@@ -9,7 +9,6 @@ function MobilGradeReport() {
   if (data) {
     return (
       <div className="MobilGradeReport">
-        Your Grade
         {data.map((course, index) => (
           <Mobilegradecards index={index} id={course.course} />
         ))}

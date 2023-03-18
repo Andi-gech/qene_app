@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import bannericon from "./assets/logo.jpg";
-import profile_pic from "./assets/user-image-.png";
+
 import useProfilehook from "./useProfiledatahook";
 import { matchPath } from "react-router-dom";
 function MobileNavbar({ onclick }) {
   const location = useLocation();
 
   const [clicked, setclicked] = useState("");
-  const { data, isError, error, isFetching, refech } = useProfilehook("me");
 
   if (
     matchPath(
@@ -99,16 +98,7 @@ function MobileNavbar({ onclick }) {
       </div>
       <div className="navbar-menu-Title">{pathname}</div>
       <div className="navbar-menu-button" onClick={onclick}>
-        {data?.profile_pic && (
-          <img
-            src={
-              data?.profile_pic.startsWith("http")
-                ? data?.profile_pic
-                : `https://andigech.pythonanywhere.com${data?.profile_pic}`
-            }
-          />
-        )}
-        {!data?.profile_pic && <img src={profile_pic} />}
+        ☰
       </div>
     </div>
   );

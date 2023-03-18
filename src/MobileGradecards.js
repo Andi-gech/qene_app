@@ -25,6 +25,7 @@ function Mobilegradecards({ id, index }) {
             }
           />
           <p>{data.Course_name}</p>
+
           {isopen && (
             <FaEye
               id="eyeicon"
