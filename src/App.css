@@ -900,6 +900,10 @@ a {
 .MobileprogresscardcourseTitle {
   font-weight: bold;
 }
+.Mobile-Homepages .navebarbody {
+  display: flex;
+  flex-direction: row;
+}
 .mobilebutton {
   color: white;
   font-weight: bold;
@@ -1144,29 +1148,45 @@ a {
   justify-content: center;
   font-weight: bold;
 }
+
 .MobileProfile img {
   border-radius: 30px;
   width: 50px;
   height: 50px;
   margin-left: 5px;
 }
+@keyframes navbaranima {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 160px;
+  }
+}
+/*#111111*/
 .navbartab {
   position: absolute;
-  background-color: #ffffff;
+  background-color: #fafafa;
+
   box-shadow: rgba(108, 108, 117, 0.37) 0px 7px 29px 0px;
+
   border-radius: 10px;
   z-index: 1;
-  width: 230px;
-  right: 40px;
-  top: 43px;
+  width: 160px;
+  height: 90vh;
+  right: 0px;
+  top: 52px;
+  animation-name: navbaranima;
+  animation-duration: 1s;
 }
+
 .navbartab p {
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 40px;
-
+  color: #000000;
   border-bottom: 1px solid black;
 }
 .MobilGradeReport {

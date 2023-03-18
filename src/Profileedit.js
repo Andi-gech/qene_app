@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useAuthHeader } from "react-auth-kit";
 import profile_pic from "./assets/user-image-.png";
+import Loadingcomponent from "./LoadingComponent";
 import Mobilebutton from "./mobileButtogreen";
 import useProfilehook from "./useProfiledatahook";
 import useUserhook from "./useUser";
@@ -14,7 +15,7 @@ function ProfileEdit() {
   const [Email, setEmail] = useState("");
   const [Image, setImage] = useState("");
 
-  const { data, isError, error, isFetching, refech } = useProfilehook("me");
+  const { data, isError, error, isLoad, refech } = useProfilehook("me");
 
   const { isLoading, data: user, status } = useUserhook("me");
   const authHeader = useAuthHeader();
@@ -148,6 +149,12 @@ function ProfileEdit() {
         <div className="Mobilesignupbutton">
           <Mobilebutton name={"edit"} onclick={handleSubmit} />
         </div>
+      </div>
+    );
+  } else if (isLoading || isLoad) {
+    return (
+      <div className="Mycourse-mobile">
+        <Loadingcomponent />
       </div>
     );
   }

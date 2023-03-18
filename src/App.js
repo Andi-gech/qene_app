@@ -148,6 +148,7 @@ function App() {
               setclicked(!clicked);
             }}
           />
+
           {clicked &&
             !(location.pathname === "/login") &&
             !(location.pathname === "/signup") && (
