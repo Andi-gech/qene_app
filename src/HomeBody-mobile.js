@@ -21,7 +21,7 @@ function Homebodymobile({ onclick }) {
         <div className="Mycourse-mobile-texts">
           You have {mycoursedata?.length} course Enroll
         </div>
-        {mycoursedata.length !== 0 && (
+        {mycoursedata.length == 0 && (
           <div className="Mycourse-mobile-nocontent-add">
             <Link to={"courses"}>
               <Mobilebutton name={"Add course"} />
