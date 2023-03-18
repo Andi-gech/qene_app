@@ -1,4 +1,5 @@
 import { FaLine } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import Errrorcomponent from "./errorComponent";
 import Loadingcomponent from "./LoadingComponent";
 import Mobilebutton from "./mobileButtogreen";
@@ -20,9 +21,11 @@ function Homebodymobile({ onclick }) {
         <div className="Mycourse-mobile-texts">
           You have {mycoursedata?.length} course Enroll
         </div>
-        {mycoursedata.length == 0 && (
+        {mycoursedata.length !== 0 && (
           <div className="Mycourse-mobile-nocontent-add">
-            <Mobilebutton name={"Add course"} />
+            <Link to={"courses"}>
+              <Mobilebutton name={"Add course"} />
+            </Link>
           </div>
         )}
         {mycoursedata?.length > 0 && (
