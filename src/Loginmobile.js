@@ -46,7 +46,13 @@ function LoginMobile() {
           color: "black",
         }}
       >
-        <h2>WELLCOME TO QENE</h2>
+        <h2
+          style={{
+            color: "black",
+          }}
+        >
+          WELLCOME TO QENE
+        </h2>
         <div className="Sign-upbox">
           <h3
             style={{
