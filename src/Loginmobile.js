@@ -43,12 +43,18 @@ function LoginMobile() {
       <div
         className="Signupcomponent"
         style={{
-          color: "white",
+          color: "black",
         }}
       >
         <h2>WELLCOME TO QENE</h2>
         <div className="Sign-upbox">
-          <h3>LOGIN</h3>
+          <h3
+            style={{
+              color: "black",
+            }}
+          >
+            LOGIN
+          </h3>
 
           <form>
             <div className="MobileEachInput">
