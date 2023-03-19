@@ -54,7 +54,7 @@ function LoginMobile() {
             <div className="MobileEachInput">
               <p
                 style={{
-                  color: "white",
+                  color: "black",
                 }}
               >
                 username
@@ -72,7 +72,7 @@ function LoginMobile() {
             <div className="MobileEachInput">
               <p
                 style={{
-                  color: "white",
+                  color: "black",
                 }}
               >
                 password
