@@ -40,7 +40,12 @@ function LoginMobile() {
     return <Navigate to="/" />;
   } else {
     return (
-      <div className="Signupcomponent">
+      <div
+        className="Signupcomponent"
+        style={{
+          color: "white",
+        }}
+      >
         <h2>WELLCOME TO QENE</h2>
         <div className="Sign-upbox">
           <h3>LOGIN</h3>
