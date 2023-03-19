@@ -107,7 +107,7 @@ function MobileNavbar({ onclick }) {
         <img
           src={bannericon}
           style={{
-            filter: invert(isDarkMode ? "100%" : "0%"),
+            filter: `invert(${isDarkMode ? "100%" : "0%"})`,
           }}
         />
       </div>
