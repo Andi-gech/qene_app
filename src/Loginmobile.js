@@ -52,7 +52,13 @@ function LoginMobile() {
 
           <form>
             <div className="MobileEachInput">
-              <p>username</p>
+              <p
+                style={{
+                  color: "white",
+                }}
+              >
+                username
+              </p>
               <input
                 placeholder="Username"
                 id="username"
@@ -64,7 +70,13 @@ function LoginMobile() {
             </div>
 
             <div className="MobileEachInput">
-              <p>password</p>
+              <p
+                style={{
+                  color: "white",
+                }}
+              >
+                password
+              </p>
               <input
                 placeholder="password"
                 id="password"
