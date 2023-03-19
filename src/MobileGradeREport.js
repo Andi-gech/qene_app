@@ -27,14 +27,26 @@ function MobilGradeReport() {
   }
   if (isLoading) {
     return (
-      <div className="MobilGradeReport">
+      <div
+        className="MobilGradeReport"
+        style={{
+          background: isDarkMode ? "black" : "white",
+          color: isDarkMode ? "white" : "black",
+        }}
+      >
         <Loadingcomponent />
       </div>
     );
   }
   if (error) {
     return (
-      <div className="MobilGradeReport">
+      <div
+        className="MobilGradeReport"
+        style={{
+          background: isDarkMode ? "black" : "white",
+          color: isDarkMode ? "white" : "black",
+        }}
+      >
         <Errrorcomponent error={error} />
       </div>
     );

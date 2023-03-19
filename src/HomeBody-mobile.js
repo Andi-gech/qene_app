@@ -53,13 +53,25 @@ function Homebodymobile({ onclick }) {
     );
   } else if (isLoading) {
     return (
-      <div className="Mycourse-mobile">
+      <div
+        className="Mycourse-mobile"
+        style={{
+          background: isDarkMode ? "black" : "white",
+          color: isDarkMode ? "white" : "black",
+        }}
+      >
         <Loadingcomponent />
       </div>
     );
   } else if (Mycourseerror) {
     return (
-      <div className="Mycourse-mobile">
+      <div
+        className="Mycourse-mobile"
+        style={{
+          background: isDarkMode ? "black" : "white",
+          color: isDarkMode ? "white" : "black",
+        }}
+      >
         <Errrorcomponent error={Mycourseerror} />
       </div>
     );

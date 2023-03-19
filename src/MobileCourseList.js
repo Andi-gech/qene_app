@@ -61,7 +61,13 @@ function Mobilecourselistview() {
   }
   if (isLoading) {
     return (
-      <div className="MobileCourseList">
+      <div
+        className="MobileCourseList"
+        style={{
+          background: isDarkMode ? "black" : "white",
+          color: isDarkMode ? "white" : "black",
+        }}
+      >
         <Loadingcomponent />
       </div>
     );

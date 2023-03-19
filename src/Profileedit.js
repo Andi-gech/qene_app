@@ -161,7 +161,13 @@ function ProfileEdit() {
     );
   } else if (isLoading || isLoad) {
     return (
-      <div className="Mycourse-mobile">
+      <div
+        className="Mycourse-mobile"
+        style={{
+          background: isDarkMode ? "black" : "white",
+          color: isDarkMode ? "white" : "black",
+        }}
+      >
         <Loadingcomponent />
       </div>
     );
