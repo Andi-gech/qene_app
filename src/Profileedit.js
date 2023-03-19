@@ -1,7 +1,9 @@
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useAuthHeader } from "react-auth-kit";
+import AmharicModeContext from "./Amharicversion";
 import profile_pic from "./assets/user-image-.png";
+import DarkModeContext from "./DarkMODE";
 import Loadingcomponent from "./LoadingComponent";
 import Mobilebutton from "./mobileButtogreen";
 import useProfilehook from "./useProfiledatahook";
@@ -14,7 +16,8 @@ function ProfileEdit() {
   const [Lastname, setLastName] = useState("");
   const [Email, setEmail] = useState("");
   const [Image, setImage] = useState("");
-
+  const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
+  const { isAmharicMode, toggleAmharicMode } = useContext(AmharicModeContext);
   const { data, isError, error, isLoad, refech } = useProfilehook("me");
 
   const { isLoading, data: user, status } = useUserhook("me");
@@ -67,7 +70,13 @@ function ProfileEdit() {
   };
   if (data && user) {
     return (
-      <div className="Profilemobilepages">
+      <div
+        className="Profilemobilepages"
+        style={{
+          background: isDarkMode ? "black" : "white",
+          color: isDarkMode ? "white" : "black",
+        }}
+      >
         <div className="ProfileImage">
           {data?.profile_pic && (
             <img
@@ -87,18 +96,14 @@ function ProfileEdit() {
           type="file"
           onChange={(event) => setImage(event.target.files[0])}
         />
-        {createed && (
+        {(createed || imagecreateed) && (
           <div className="create-indicator">
-            <p>sucessfully edited</p>
+            <p>{isAmharicMode ? "በ ተሳካ ሁኔታ ቀይረዋል" : "sucessfully edited"}</p>
           </div>
         )}
-        {imagecreateed && (
-          <div className="create-indicator">
-            <p>image sucessfully edited</p>
-          </div>
-        )}
+
         <div className="MobileEachInput">
-          <p>firstname</p>
+          <p>{isAmharicMode ? "ስም" : "firstname"}</p>
           <input
             placeholder={user.first_name}
             id="Firstname"
@@ -110,7 +115,7 @@ function ProfileEdit() {
         </div>
 
         <div className="MobileEachInput">
-          <p>Lastname</p>
+          <p>{isAmharicMode ? "የአባት ስም" : "Lastname"}</p>
           <input
             placeholder={user.last_name}
             id="Lastname"
@@ -122,7 +127,7 @@ function ProfileEdit() {
         </div>
 
         <div className="MobileEachInput">
-          <p>Email adress</p>
+          <p>{isAmharicMode ? "ኢሜል" : "Email adress"}</p>
           <input
             placeholder={user.email}
             id="Email"
@@ -135,7 +140,7 @@ function ProfileEdit() {
         </div>
 
         <div className="MobileEachInput">
-          <p>username</p>
+          <p>{isAmharicMode ? "የግል መጠሪያ" : "username"}</p>
           <input
             placeholder={user.username}
             disabled
@@ -147,7 +152,10 @@ function ProfileEdit() {
           />
         </div>
         <div className="Mobilesignupbutton">
-          <Mobilebutton name={"edit"} onclick={handleSubmit} />
+          <Mobilebutton
+            name={isAmharicMode ? "ቀይር" : "edit"}
+            onclick={handleSubmit}
+          />
         </div>
       </div>
     );

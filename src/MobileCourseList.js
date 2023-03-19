@@ -2,12 +2,14 @@ import Mobilecourscard from "./MobileCourseCArd";
 import Errrorcomponent from "./errorComponent";
 import Loadingcomponent from "./LoadingComponent";
 import useCoursehook from "./useCoursedata";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { isError } from "react-query";
+import DarkModeContext from "./DarkMODE";
 
 function Mobilecourselistview() {
   const [url, seturl] = useState(1);
   const [bigcard, setbigcard] = useState(null);
+  const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
 
   const { data, isError, error, isLoading, refech } = useCoursehook(url);
   const totalResult = data?.count;
@@ -28,7 +30,13 @@ function Mobilecourselistview() {
   }
   if (data) {
     return (
-      <div className="MobileCourseList">
+      <div
+        className="MobileCourseList"
+        style={{
+          background: isDarkMode ? "black" : "white",
+          color: isDarkMode ? "white" : "black",
+        }}
+      >
         <div className="MobileCourseListText">
           <p>there are {totalResult} courses</p>
         </div>

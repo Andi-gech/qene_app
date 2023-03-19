@@ -1,10 +1,13 @@
+import { useContext } from "react";
 import { FaPlayCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import bannericon from "./assets/code.jpg";
+import DarkModeContext from "./DarkMODE";
 import Loadingcomponent from "./LoadingComponent";
 import useProfilehook from "./useProfiledatahook";
 function Mobilecourscard({ name, coursepic, courseid, user, index }) {
   const { data, isError, error, isLoading, refech } = useProfilehook(user);
+  const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
 
   if (data) {
     return (
@@ -40,7 +43,17 @@ function Mobilecourscard({ name, coursepic, courseid, user, index }) {
       </Link>
     );
   } else if (isLoading && index == 0) {
-    return <Loadingcomponent />;
+    return (
+      <div
+        className="MobileCourseList"
+        style={{
+          background: isDarkMode ? "black" : "white",
+          color: isDarkMode ? "white" : "black",
+        }}
+      >
+        <Loadingcomponent />
+      </div>
+    );
   }
 }
 export default Mobilecourscard;

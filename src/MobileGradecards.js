@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { CirclesWithBar } from "react-loader-spinner";
+import AmharicModeContext from "./Amharicversion";
 import bannericon from "./assets/code.jpg";
 import Gradegenerator from "./Gradegenerator";
 import Loadingcomponent from "./LoadingComponent";
@@ -13,6 +14,8 @@ function Mobilegradecards({ id, index }) {
 
   const { data: courseoutline, isLoading: Loading } = useCourseOutlinehook(id);
   const { data: grade, isLoading: Load } = useGradedata();
+  const { isAmharicMode, toggleAmharicMode } = useContext(AmharicModeContext);
+
   if (data && courseoutline && grade) {
     return (
       <div className="MobileGradecardswithoutline">
@@ -48,8 +51,10 @@ function Mobilegradecards({ id, index }) {
         {isopen && courseoutline && (
           <div className="outline-grade">
             <div className="Individualoutlineee">
-              <p id="tablename">Course name</p>
-              <p id="tablename">Evaluated Mark</p>
+              <p id="tablename">{isAmharicMode ? "የኮርሱ ስም" : "Course name"}</p>
+              <p id="tablename">
+                {isAmharicMode ? "ያስመዘገቡት ውጤት" : "Evaluated Mark"}
+              </p>
             </div>
             {courseoutline.map((course) => (
               <div className="Individualoutlineee">

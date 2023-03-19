@@ -1,9 +1,12 @@
 import axios from "axios";
+import { useContext } from "react";
 import { useAuthHeader } from "react-auth-kit";
 import { FaCheckCircle, FaCircleNotch } from "react-icons/fa";
 import { useParams } from "react-router-dom";
+import AmharicModeContext from "./Amharicversion";
 
 import CourseProfile from "./CourseProfilemobile";
+import DarkModeContext from "./DarkMODE";
 import Loadingcomponent from "./LoadingComponent";
 import Mobilebutton from "./mobileButtogreen";
 import useCourseOutlinehook from "./useCourseoutlineHook";
@@ -13,6 +16,7 @@ import useIndividualcoursehook from "./useIndividualcoursehook";
 function MobileEnroll() {
   const { id } = useParams();
   const authHeader = useAuthHeader();
+  const { isAmharicMode, toggleAmharicMode } = useContext(AmharicModeContext);
   const { data: outline, isLoading: isLoad } = useCourseOutlinehook(id);
 
   const { data: course, isLoading } = useIndividualcoursehook(id);
@@ -25,6 +29,8 @@ function MobileEnroll() {
     isLoading: loadingoutline,
   } = useCourseOutlinehook(id);
   const { data: mycourse, refetch } = useMycoursedata();
+  const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
+
   const enroll = () => {
     axios.defaults.headers.common["Authorization"] = authHeader();
 
@@ -46,7 +52,13 @@ function MobileEnroll() {
   };
   if (course && data && mycourse) {
     return (
-      <div className="MobileEnroll">
+      <div
+        className="MobileEnroll"
+        style={{
+          background: isDarkMode ? "black" : "white",
+          color: isDarkMode ? "white" : "black",
+        }}
+      >
         <div className="CourseTitle">
           <h2>{course.Course_name}</h2>
         </div>
@@ -55,7 +67,10 @@ function MobileEnroll() {
         </div>
         <CourseProfile user={course.Teacher} />
         <div className="MobileCourseoutline">
-          <p id="Coutlineeourse">CourseOutline</p>
+          <p id="Coutlineeourse">
+            {" "}
+            {isAmharicMode ? "የኮርስ ስም" : " CourseOutline"}
+          </p>
           {outline.map((courseoutline) => (
             <div className="courseoutlinesnames">
               <FaCheckCircle id="circlenotch" />
@@ -65,10 +80,13 @@ function MobileEnroll() {
         </div>
         <div>
           {mycourse.some((item) => item.course === course.id) && (
-            <Mobilebutton name={"Enrolled"} />
+            <Mobilebutton name={isAmharicMode ? "ተመዝግበዋል" : "Enrolled"} />
           )}
           {!mycourse.some((item) => item.course === course.id) && (
-            <Mobilebutton onclick={enroll} name={"Enroll"} />
+            <Mobilebutton
+              onclick={enroll}
+              name={isAmharicMode ? "ተመዝገብ " : "Enroll"}
+            />
           )}
         </div>
       </div>
@@ -76,7 +94,13 @@ function MobileEnroll() {
   }
   if (isLoad || isLoading) {
     return (
-      <div className="MobileCourseList">
+      <div
+        className="MobileCourseList"
+        style={{
+          background: isDarkMode ? "black" : "white",
+          color: isDarkMode ? "white" : "black",
+        }}
+      >
         <Loadingcomponent />
       </div>
     );

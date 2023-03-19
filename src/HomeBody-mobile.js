@@ -1,5 +1,8 @@
+import { useContext } from "react";
 import { FaLine } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import AmharicModeContext from "./Amharicversion";
+import DarkModeContext from "./DarkMODE";
 import Errrorcomponent from "./errorComponent";
 import Loadingcomponent from "./LoadingComponent";
 import Mobilebutton from "./mobileButtogreen";
@@ -8,6 +11,9 @@ import useMycoursedata from "./usefetchmycoursehook";
 
 function Homebodymobile({ onclick }) {
   console.log("home");
+  const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
+  const { isAmharicMode, toggleAmharicMode } = useContext(AmharicModeContext);
+
   const {
     data: mycoursedata,
     isError: mycourser,
@@ -17,9 +23,17 @@ function Homebodymobile({ onclick }) {
 
   if (mycoursedata) {
     return (
-      <div className="Mycourse-mobile">
+      <div
+        className="Mycourse-mobile"
+        style={{
+          background: isDarkMode ? "black" : "white",
+          color: isDarkMode ? "white" : "black",
+        }}
+      >
         <div className="Mycourse-mobile-texts">
-          You have {mycoursedata?.length} course Enroll
+          {isAmharicMode
+            ? `በ ${mycoursedata?.length} ኮርሶች ውስጥ ተመዝግበዋል`
+            : `You have ${mycoursedata?.length} course Enroll`}
         </div>
         {mycoursedata.length == 0 && (
           <div className="Mycourse-mobile-nocontent-add">

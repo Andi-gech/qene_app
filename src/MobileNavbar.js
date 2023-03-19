@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import bannericon from "./assets/logo.jpg";
 
 import useProfilehook from "./useProfiledatahook";
 import { matchPath } from "react-router-dom";
+import DarkModeContext from "./DarkMODE";
+import AmharicModeContext from "./Amharicversion";
 function MobileNavbar({ onclick }) {
   const location = useLocation();
+  const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
+  const { isAmharicMode, toggleAmharicMode } = useContext(AmharicModeContext);
 
   const [clicked, setclicked] = useState("");
 
@@ -37,7 +41,7 @@ function MobileNavbar({ onclick }) {
       location.pathname
     )
   ) {
-    pathname = "Mycourse";
+    pathname = isAmharicMode ? "የኔ ኮርሶች" : "Mycourse";
   } else if (
     matchPath(
       {
@@ -47,7 +51,7 @@ function MobileNavbar({ onclick }) {
       location.pathname
     )
   ) {
-    pathname = "ALLcourse";
+    pathname = isAmharicMode ? "ሁሉም ኮርሶች" : "ALLcourse";
   } else if (
     matchPath(
       {
@@ -57,7 +61,7 @@ function MobileNavbar({ onclick }) {
       location.pathname
     )
   ) {
-    pathname = "Learnboard";
+    pathname = isAmharicMode ? "የመማርያ ሰሌዳ" : "Learnboard";
   } else if (
     matchPath(
       {
@@ -67,9 +71,9 @@ function MobileNavbar({ onclick }) {
       location.pathname
     )
   ) {
-    pathname = "Quiz";
+    pathname = isAmharicMode ? "ፈተና" : "Quiz";
   } else if (location.pathname === "/grade") {
-    pathname = "Grade";
+    pathname = isAmharicMode ? "ውጤት" : "Grade";
   } else if (
     matchPath(
       {
@@ -79,7 +83,7 @@ function MobileNavbar({ onclick }) {
       location.pathname
     )
   ) {
-    pathname = "Enroll";
+    pathname = isAmharicMode ? "ተመዝገብ" : "Enroll";
   } else if (
     matchPath(
       {
@@ -89,10 +93,16 @@ function MobileNavbar({ onclick }) {
       location.pathname
     )
   ) {
-    pathname = "Profile";
+    pathname = isAmharicMode ? "የግል ማህደር" : "Profile";
   }
   return (
-    <div className="Mobile-navbar">
+    <div
+      className="Mobile-navbar"
+      style={{
+        background: isDarkMode ? "black" : "white",
+        color: isDarkMode ? "white" : "black",
+      }}
+    >
       <div className="navbar-mobile-logo">
         <img src={bannericon} />
       </div>

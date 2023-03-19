@@ -1,9 +1,10 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useAuthHeader } from "react-auth-kit";
 import { useParams } from "react-router-dom";
 import Button from "./Button";
 import Buttons from "./Buttons";
+import DarkModeContext from "./DarkMODE";
 import Questions from "./Questions";
 import useAnswerdata from "./useAnswer";
 import useQuestiondata from "./useQuestion";
@@ -14,10 +15,16 @@ function Quiz() {
   const [ready, setready] = useState(false);
   const { data: quiz } = useQuizdata(id, pk);
   const authHeader = useAuthHeader();
+  const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
 
   if (ready) {
     return (
-      <div>
+      <div
+        style={{
+          background: isDarkMode ? "black" : "white",
+          color: isDarkMode ? "white" : "black",
+        }}
+      >
         {quiz.map((quiz) => (
           <Questions id={id} pk={pk} quizid={quiz.id} />
         ))}
@@ -45,7 +52,13 @@ function Quiz() {
 
   if (!ready) {
     return (
-      <div className="Quiz_get_started">
+      <div
+        className="Quiz_get_started"
+        style={{
+          background: isDarkMode ? "black" : "white",
+          color: isDarkMode ? "white" : "black",
+        }}
+      >
         <p>You are About To Enter The exam Hall </p>
         <p>
           Are You confident to take thos quiz once You have in

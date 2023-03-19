@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import DarkModeContext from "./DarkMODE";
 import Errrorcomponent from "./errorComponent";
 import Loadingcomponent from "./LoadingComponent";
 import Mobilegradecards from "./MobileGradecards";
@@ -6,9 +8,17 @@ import useMycoursedata from "./usefetchmycoursehook";
 function MobilGradeReport() {
   const { isLoading, data, isError, error, isFetching, refech } =
     useMycoursedata();
+  const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
+
   if (data) {
     return (
-      <div className="MobilGradeReport">
+      <div
+        className="MobilGradeReport"
+        style={{
+          background: isDarkMode ? "black" : "white",
+          color: isDarkMode ? "white" : "black",
+        }}
+      >
         {data.map((course, index) => (
           <Mobilegradecards index={index} id={course.course} />
         ))}

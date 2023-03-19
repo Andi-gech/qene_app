@@ -1,11 +1,14 @@
+import { useContext } from "react";
 import { CircularProgressbar } from "react-circular-progressbar";
 import { Link } from "react-router-dom";
+import DarkModeContext from "./DarkMODE";
 import Loadingcomponent from "./LoadingComponent";
 import useCompletemodule from "./useCompletedmodule";
 import useCourseOutlinehook from "./useCourseoutlineHook";
 import useIndividualcoursehook from "./useIndividualcoursehook";
 
 function MobileProgrsscard({ course_id, index }) {
+  const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
   const { data: course, isLoading: isload } =
     useIndividualcoursehook(course_id);
   const { data, isError, error, isFetching, refech, isLoading } =
@@ -27,7 +30,13 @@ function MobileProgrsscard({ course_id, index }) {
     };
     return (
       <Link to={`/courses/${course.id}`}>
-        <div className="Mobile-course-progress">
+        <div
+          className="Mobile-course-progress"
+          style={{
+            background: isDarkMode ? "black" : "white",
+            color: isDarkMode ? "white" : "black",
+          }}
+        >
           <div className="circularProgress">
             <CircularProgressbar
               value={count()}
@@ -49,7 +58,7 @@ function MobileProgrsscard({ course_id, index }) {
                   transition: "stroke-dashoffset 2.5s ease 0s",
                 },
                 text: {
-                  fill: "black",
+                  fill: isDarkMode ? "white" : "black",
                   fontWeight: "bold",
                 },
               }}

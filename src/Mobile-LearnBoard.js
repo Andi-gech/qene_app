@@ -5,9 +5,10 @@ import MobileLearncontent from "./mobileLearncontents";
 import useCompletemodule from "./useCompletedmodule";
 import useCoursrLearn from "./useCourseLearning";
 import useCourseOutlinehook from "./useCourseoutlineHook";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Mobilebutton from "./mobileButtogreen";
 import Loadingcomponent from "./LoadingComponent";
+import DarkModeContext from "./DarkMODE";
 function MobileLearnBoard() {
   const { id } = useParams();
 
@@ -19,6 +20,8 @@ function MobileLearnBoard() {
     refech,
     isLoading: isLoad,
   } = useCourseOutlinehook(id);
+  const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
+
   const { data: completed, isLoading: loading } = useCompletemodule();
   const [selectedOption, setSelectedOption] = useState(null);
   const { data: details, isLoading } = useCoursrLearn(id, selectedOption?.id);
@@ -36,9 +39,21 @@ function MobileLearnBoard() {
   };
   if (dataoption) {
     return (
-      <div className="MobileLearnBoard">
+      <div
+        className="MobileLearnBoard"
+        style={{
+          background: isDarkMode ? "black" : "white",
+          color: isDarkMode ? "white" : "black",
+        }}
+      >
         <div className="Mobilecourseoutlinetitle">
-          <p>{selectedOption ? selectedOption.label : "Wellcome"}</p>
+          <p
+            style={{
+              color: isDarkMode ? "white" : "black",
+            }}
+          >
+            {selectedOption ? selectedOption.label : "Wellcome"}
+          </p>
           <Select
             onChange={setSelectedOption}
             required
@@ -59,7 +74,13 @@ function MobileLearnBoard() {
           />
         )}
         {!selectedOption && (
-          <div className="MobileLearncontent">
+          <div
+            className="MobileLearncontent"
+            style={{
+              background: isDarkMode ? "black" : "white",
+              color: isDarkMode ? "white" : "black",
+            }}
+          >
             <div className="MobileLearncontentParagraph">
               <p>
                 There are several strategies you can use to get better results
@@ -105,7 +126,13 @@ function MobileLearnBoard() {
   }
   if (isLoading || loading || isLoad) {
     return (
-      <div className="MobileLearnBoard">
+      <div
+        className="MobileLearnBoard"
+        style={{
+          background: isDarkMode ? "black" : "white",
+          color: isDarkMode ? "white" : "black",
+        }}
+      >
         <Loadingcomponent />
       </div>
     );

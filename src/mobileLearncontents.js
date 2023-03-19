@@ -1,7 +1,9 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import YouTube from "react-youtube";
 
 import Code from "./code";
+import DarkModeContext from "./DarkMODE";
 import Mobilebutton from "./mobileButtogreen";
 function MobileLearncontent({
   name,
@@ -11,9 +13,17 @@ function MobileLearncontent({
   isLoading,
   id,
 }) {
+  const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
+
   if (detail) {
     return (
-      <div className="MobileLearncontent">
+      <div
+        className="MobileLearncontent"
+        style={{
+          background: isDarkMode ? "black" : "white",
+          color: isDarkMode ? "white" : "black",
+        }}
+      >
         {detail?.map((details) => (
           <>
             {details.text_content && (

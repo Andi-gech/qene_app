@@ -1,7 +1,8 @@
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useAuthHeader } from "react-auth-kit";
 import { useParams } from "react-router-dom";
+import DarkModeContext from "./DarkMODE";
 import Loadingcomponent from "./LoadingComponent";
 import Mobilebutton from "./mobileButtogreen";
 import MobileQuizQuestions from "./MobileQuizQuiestions";
@@ -13,6 +14,7 @@ function MobileQuizboard() {
   const [ready, setready] = useState(false);
   const { data: quiz, isLoading } = useQuizdata(id, pk);
   const authHeader = useAuthHeader();
+  const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
   const Setcompleted = () => {
     axios.defaults.headers.common["Authorization"] = authHeader();
 
@@ -33,7 +35,13 @@ function MobileQuizboard() {
   };
   if (quiz) {
     return (
-      <div className="MobileQuizboard">
+      <div
+        className="MobileQuizboard"
+        style={{
+          background: isDarkMode ? "black" : "white",
+          color: isDarkMode ? "white" : "black",
+        }}
+      >
         {!ready && (
           <div className="are-you-sure">
             <p>
