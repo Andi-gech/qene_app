@@ -169,8 +169,8 @@ function App() {
             />
 
             {clicked &&
-              !(location.pathname === "/login") &&
-              !(location.pathname === "/signup") && <Navbartab />}
+              location.pathname !== "/login" &&
+              location.pathname !== "/signup" && <Navbartab />}
 
             <Routes>
               <Route exact path="/login" element={<LoginMobile />} />

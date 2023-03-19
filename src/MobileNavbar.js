@@ -104,7 +104,12 @@ function MobileNavbar({ onclick }) {
       }}
     >
       <div className="navbar-mobile-logo">
-        <img src={bannericon} />
+        <img
+          src={bannericon}
+          style={{
+            filter: invert(isDarkMode ? "100%" : "0%"),
+          }}
+        />
       </div>
       <div className="navbar-menu-Title">{pathname}</div>
       <div className="navbar-menu-button" onClick={onclick}>
