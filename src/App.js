@@ -32,6 +32,7 @@ import SignUppcComponent from "./SignupForpc";
 import Navbartab from "./Navbartab";
 import DarkModeContext from "./DarkMODE";
 import AmharicModeContext from "./Amharicversion";
+import ClickAwayListener from "react-click-away-listener";
 
 function App() {
   const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
@@ -50,7 +51,7 @@ function App() {
     setIsDarkMode(!isDarkMode);
   };
   const toggleAmharicMode = () => {
-    setIsAmharicMode(!isDarkMode);
+    setIsAmharicMode(!isAmharicMode);
   };
 
   return (
@@ -170,7 +171,11 @@ function App() {
 
             {clicked &&
               location.pathname !== "/login" &&
-              location.pathname !== "/signup" && <Navbartab />}
+              location.pathname !== "/signup" && (
+                <ClickAwayListener onClickAway={() => setclicked(false)}>
+                  <Navbartab />
+                </ClickAwayListener>
+              )}
 
             <Routes>
               <Route exact path="/login" element={<LoginMobile />} />
