@@ -171,7 +171,8 @@ function App() {
 
             {clicked &&
               location.pathname !== "/login" &&
-              location.pathname !== "/signup" && (
+              location.pathname !== "/signup" &&
+              location.pathname !== "/Signup" && (
                 <Navbartab onclick={() => setclicked(false)} />
               )}
 
