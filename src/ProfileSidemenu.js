@@ -39,28 +39,24 @@ function ProfileSidemenu() {
     <>
       {isDesktopOrLaptop && (
         <div className="Sidemenu">
-          {data && user && (
-            <>
-              <div className="ProfileSidemenu">
-                {data?.profile_pic && (
-                  <img
-                    src={
-                      data?.profile_pic.startsWith("http")
-                        ? data?.profile_pic
-                        : `https://andigech.pythonanywhere.com${data?.profile_pic}`
-                    }
-                  />
-                )}
-                {!data?.profile_pic && <img src={profile_pic} />}
-                <h2>{user?.username}</h2>
-                {user?.is_staff && (
-                  <p>
-                    Admin <FaWrench />
-                  </p>
-                )}
-              </div>
-            </>
-          )}
+          <div className="ProfileSidemenu">
+            {data?.profile_pic && (
+              <img
+                src={
+                  data?.profile_pic.startsWith("http")
+                    ? data?.profile_pic
+                    : `https://andigech.pythonanywhere.com${data?.profile_pic}`
+                }
+              />
+            )}
+            {!data?.profile_pic && <img src={profile_pic} />}
+            <h2>{user?.username}</h2>
+            {user?.is_staff && (
+              <p>
+                Admin <FaWrench />
+              </p>
+            )}
+          </div>
 
           <div className="Buttons-menu">
             <div className="menus">
