@@ -172,9 +172,7 @@ function App() {
             {clicked &&
               location.pathname !== "/login" &&
               location.pathname !== "/signup" && (
-                <ClickAwayListener onClickAway={() => setclicked(false)}>
-                  <Navbartab />
-                </ClickAwayListener>
+                <Navbartab onclick={() => setclicked(false)} />
               )}
 
             <Routes>
