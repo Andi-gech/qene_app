@@ -12,8 +12,8 @@ function Login() {
   const [userame, setuserName] = useState("");
   const [password, setpassword] = useState("");
   const signin = useSignIn();
-  const [jasons, setjasons] = useState({});
-  const fetchData = async () => {
+
+  const fetchData = async (jasons) => {
     const res = await axios
       .post("https://andigech.pythonanywhere.com/auth/jwt/create/", jasons)
       .then((res) => {
@@ -30,13 +30,11 @@ function Login() {
   const handleSubmit = (event) => {
     console.log("handleSubmit ran");
     event.preventDefault();
-    setjasons({
+
+    fetchData({
       username: userame,
       password: password,
     });
-
-    fetchData();
-    console.log(jasons);
   };
   if (isAuthenticated()) {
     return <Navigate to="/" />;
@@ -93,9 +91,8 @@ function Login() {
                 <Link to="/signup">
                   <p
                     style={{
-                      color: "grey",
+                      color: "black",
                       marginTop: 20,
-                      marginLeft: -190,
                     }}
                   >
                     don't have an account?

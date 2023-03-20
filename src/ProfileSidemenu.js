@@ -109,15 +109,7 @@ function ProfileSidemenu() {
                   <p>Discusion</p>
                 </div>
               </Link>
-              <Link to={"/editprofile"}>
-                <div className="Menubutton">
-                  <span id="menuicon">
-                    <FaSignOutAlt />
-                  </span>
 
-                  <p>edit profile</p>
-                </div>
-              </Link>
               <Link onClick={() => signOut()}>
                 <div className="Menubutton">
                   <span id="menuicon">

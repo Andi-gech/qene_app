@@ -59,11 +59,11 @@ function Smallprogressbar({ courseid }) {
                   strokeLinecap: "butt",
                   transform: "rotate(-126deg)",
                   transformOrigin: "center center",
-                  stroke: "#FF7B77",
+                  stroke: "red",
                   transition: "stroke-dashoffset 2.5s ease 0s",
                 },
                 text: {
-                  fill: "#ddd",
+                  fill: "#080808",
                   fontWeight: "bold",
                 },
               }}

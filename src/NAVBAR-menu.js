@@ -1,4 +1,4 @@
-import bannericon from "./assets/logo.jpg";
+import bannericon from "./assets/logo.png";
 import Searchbar from "./searchbar";
 import { useMediaQuery } from "react-responsive";
 
@@ -46,17 +46,17 @@ function Navbarmenu() {
             <div className="Icons">
               <div className="Icon">
                 <Link>
-                  <FaLaptop size={25} />
+                  <FaLaptop size={25} color="black" />
                 </Link>
               </div>
               <div className="Icon">
                 <Link>
-                  <FaBell size={25} />
+                  <FaBell size={25} color="black" />
                 </Link>
               </div>
               <div className="Icon">
-                <Link>
-                  <FaRegUserCircle size={25} />
+                <Link to={"/editprofile"}>
+                  <FaWrench size={24} color="black" />
                 </Link>
               </div>
             </div>
