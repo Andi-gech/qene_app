@@ -1,5 +1,5 @@
 import { useSignOut } from "react-auth-kit";
-import { Link } from "react-router-dom";
+import { Link, matchPath, useLocation } from "react-router-dom";
 import useProfilehook from "./useProfiledatahook";
 import profile_pic from "./assets/user-image-.png";
 import useUserhook from "./useUser";
@@ -11,8 +11,27 @@ function Navbartab({ onclick }) {
   const signOut = useSignOut();
   const { data, isError, error, isFetching, refech } = useProfilehook("me");
   const { data: user } = useUserhook("me");
+  const location = useLocation();
   const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
   const { isAmharicMode, toggleAmharicMode } = useContext(AmharicModeContext);
+  if (
+    matchPath(
+      {
+        path: "/login",
+        exact: true,
+      },
+      location.pathname
+    ) ||
+    matchPath(
+      {
+        path: "/signup",
+        exact: true,
+      },
+      location.pathname
+    )
+  ) {
+    return null;
+  }
 
   return (
     <ClickAwayListener onClickAway={onclick}>
