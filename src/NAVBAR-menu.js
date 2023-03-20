@@ -10,6 +10,7 @@ import {
   FaLaptop,
   FaPaperPlane,
   FaRegUserCircle,
+  FaSearch,
   FaUserGraduate,
   FaWaveSquare,
   FaWrench,
@@ -42,6 +43,9 @@ function Navbarmenu() {
           <div className="Notification">
             <div className="input">
               <input placeholder="search courses..." />
+              <div style={{ marginTop: 10, marginLeft: 10 }}>
+                <FaSearch size={25} />
+              </div>
             </div>
             <div className="Icons">
               <div className="Icon">

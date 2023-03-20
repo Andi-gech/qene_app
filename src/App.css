@@ -35,6 +35,9 @@ body {
 }
 .Navbarmenu .Notification .input {
   align-self: center;
+  display: flex;
+  flex-direction: row;
+  width: 700px;
 }
 .Navbarmenu .Notification .input input {
   width: 500px;
