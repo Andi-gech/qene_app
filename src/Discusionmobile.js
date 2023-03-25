@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { useAuthHeader, useAuthUser } from "react-auth-kit";
 import {
   FaPaperPlane,
+  FaPlane,
   FaRegArrowAltCircleLeft,
   FaRegArrowAltCircleRight,
 } from "react-icons/fa";
@@ -72,8 +73,8 @@ function DiscusiionMobile() {
   }, [messages]);
   if (user && profile && messages) {
     return (
-      <div className="Homechat">
-        <div className="messagebox-mobile">
+      <div className="Mycourse-mobile">
+        <div className="inputpages">
           {messages.map((message, index) => (
             <>
               {message.user !== user?.id && (
@@ -91,23 +92,25 @@ function DiscusiionMobile() {
                   <Sendmessage
                     name={"#8A2BE2"}
                     message={message.message}
-                    date={Date(message.timestamp)}
+                    date={message.timestamp}
                   />
                   <ChatProfile id={message.user} />
                 </div>
               )}
             </>
           ))}
-          <div ref={messagesEndRef} />
+          <p ref={messagesEndRef} />
         </div>
-        <div className="sendmesssageButtonmobile">
+
+        <div className="sendmesssageMobile">
           <input
             value={message}
+            placeholder="Message...."
             onChange={(e) => setmessage(e.target.value)}
             type="text"
           />
           <button onClick={handlesubmit}>
-            <FaRegArrowAltCircleRight size={25} />
+            <FaPaperPlane size={25} color="white" />
           </button>
         </div>
       </div>

@@ -131,12 +131,45 @@ body {
   align-items: flex-start;
   justify-content: space-between;
 }
+.inputpages {
+  margin: 5px;
+  height: 79vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+.sendmesssageMobile {
+  display: flex;
+
+  height: 30px;
+  margin: 10px;
+}
+.sendmesssageMobile ::placeholder {
+  color: rgb(255, 255, 255);
+  padding-left: 10px;
+}
+.sendmesssageMobile input {
+  width: 90%;
+  height: 35px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.623);
+  border-radius: 20px;
+}
+.sendmesssageMobile button {
+  background-color: rgb(2, 21, 53);
+  border: none;
+
+  height: 40px;
+  width: 40px;
+
+  border-radius: 40px;
+}
 .Homechat {
   background-color: rgb(247, 247, 247);
 
   width: 95vw;
   margin-left: 2vw;
-  height: 86vh;
+  height: 90vh;
   display: flex;
 
   flex-direction: column;
@@ -166,7 +199,9 @@ body {
   flex-direction: row;
 }
 .profilepics img {
-  height: 30px;
+  height: 40px;
+  width: 40px;
+  border-radius: 25px;
 }
 .reciever {
   align-self: flex-end;
@@ -1011,7 +1046,7 @@ a {
 
 .Mycourse-mobile {
   background-color: white;
-  height: 90vh;
+  height: 86.9vh;
   display: flex;
   flex-direction: column;
 }
