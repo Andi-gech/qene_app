@@ -89,6 +89,19 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+.Roomcardbox {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  width: 200px;
+  box-shadow: rgba(69, 69, 77, 0.37) 0px 7px 29px 0px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 5px;
+}
+.Roomcardbox {
+  color: black;
+}
 .Sidemenu .Buttons-menu .menus .Menubutton {
   margin-top: 5px;
   display: flex;
@@ -97,7 +110,110 @@ body {
 
   height: 30px;
 }
+.inbox {
+  width: 65vw;
+  margin-left: 5vw;
+  height: 87vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
 
+.inbox-mobile {
+  width: 95vw;
+  margin-left: 2vw;
+  height: 87vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  background-color: #02e202;
+}
+.Discussebox-mobile {
+  background-color: white;
+  overflow-x: hidden;
+  height: 90vh;
+}
+.sender {
+  display: flex;
+  flex-direction: row;
+}
+.profilepics img {
+  height: 30px;
+}
+.reciever {
+  align-self: flex-end;
+  justify-self: flex-end;
+  display: flex;
+  flex-direction: row;
+}
+.sendmesssageButton {
+  display: flex;
+
+  width: 100%;
+  height: 30px;
+}
+.sendmesssageButton input {
+  flex: 1;
+  background-color: rgba(189, 183, 183, 0.5);
+  border-radius: 20px;
+  height: 30px;
+}
+.sendmesssageButton button {
+  background-color: purple;
+  color: white;
+  border-radius: 70px;
+  width: 35px;
+  height: 35px;
+  padding-top: 3px;
+  padding-left: 3px;
+}
+.messagebox {
+  width: 100%;
+  height: 85vh;
+  overflow: hidden;
+  overflow-y: scroll;
+  display: flex;
+  padding-right: 10px;
+  background-color: #f3f3f3;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.message {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0px;
+  border-radius: 7px;
+
+  min-width: 50px;
+  min-height: 30px;
+
+  color: #ffffff;
+  margin: 2px;
+  padding: 3px;
+}
+#messagefont {
+  align-self: center;
+  font-size: 15px;
+  max-width: 230px;
+  word-wrap: break-word;
+  color: white;
+  text-align: justify;
+}
+.message p {
+  font-size: 12px;
+  align-self: flex-end;
+  color: rgb(146, 145, 145);
+}
+.inex input {
+  width: 500px;
+}
 .Sidemenu .Buttons-menu .menus a {
   color: #4d4d4d;
 }
@@ -1184,6 +1300,7 @@ a {
   height: 90vh;
   right: 0px;
   top: 52px;
+
   animation-name: navbaranima;
   animation-duration: 1s;
 }

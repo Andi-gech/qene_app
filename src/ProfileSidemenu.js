@@ -96,7 +96,7 @@ function ProfileSidemenu() {
                   <p>Projects</p>
                 </div>
               </Link>
-              <Link>
+              <Link to={"/discus"}>
                 <div className="Menubutton">
                   <span id="menuicon">
                     <FaDiscord />

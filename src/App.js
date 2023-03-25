@@ -33,6 +33,10 @@ import Navbartab from "./Navbartab";
 import DarkModeContext from "./DarkMODE";
 import AmharicModeContext from "./Amharicversion";
 import ClickAwayListener from "react-click-away-listener";
+import Discusiion from "./discussion";
+import Discusse from "./Discusse";
+import DiscusiionMobile from "./Discusionmobile";
+import DiscusseMobile from "./DiscusionDiscussMessage";
 
 function App() {
   const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
@@ -81,6 +85,25 @@ function App() {
                   element={
                     <RequireAuth loginPath="/login">
                       <ProfileEdit />
+                    </RequireAuth>
+                  }
+                />
+                <Route
+                  exact
+                  path="/discus"
+                  element={
+                    <RequireAuth loginPath="/login">
+                      <Discusse />
+                    </RequireAuth>
+                  }
+                />
+
+                <Route
+                  exact
+                  path="/discusse/:id"
+                  element={
+                    <RequireAuth loginPath="/login">
+                      <Discusiion />
                     </RequireAuth>
                   }
                 />
@@ -209,6 +232,24 @@ function App() {
                 element={
                   <RequireAuth loginPath="/login">
                     <MobileEnroll />
+                  </RequireAuth>
+                }
+              />
+              <Route
+                exact
+                path="/discus"
+                element={
+                  <RequireAuth loginPath="/login">
+                    <DiscusseMobile />
+                  </RequireAuth>
+                }
+              />
+              <Route
+                exact
+                path="/discusse/:id"
+                element={
+                  <RequireAuth loginPath="/login">
+                    <DiscusiionMobile />
                   </RequireAuth>
                 }
               />

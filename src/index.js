@@ -24,7 +24,7 @@ root.render(
           {" "}
           <App />
         </BrowserRouter>
-        <ReactQueryDevtools initialIsOpen={true} position={"bottom-right"} />
+        <ReactQueryDevtools initialIsOpen={false} position={"top-left"} />
       </QueryClientProvider>
     </AuthProvider>
   </React.StrictMode>

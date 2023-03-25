@@ -80,6 +80,15 @@ function Navbartab({ onclick }) {
             {isAmharicMode ? "ውጤት" : " Grade"}
           </p>
         </Link>
+        <Link to={"/discus"}>
+          <p
+            style={{
+              color: isDarkMode ? "white" : "black",
+            }}
+          >
+            Chat
+          </p>
+        </Link>
         <Link to={"editprofile"}>
           <p
             style={{
@@ -99,6 +108,7 @@ function Navbartab({ onclick }) {
             Darkmode
           </p>
         </Link>
+
         <Link>
           <p
             style={{
