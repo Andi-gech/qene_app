@@ -72,8 +72,8 @@ function DiscusiionMobile() {
   }, [messages]);
   if (user && profile && messages) {
     return (
-      <div className="inbox-mobile">
-        <div className="messagebox">
+      <div className="Homechat">
+        <div className="messagebox-mobile">
           {messages.map((message, index) => (
             <>
               {message.user !== user?.id && (
@@ -100,7 +100,7 @@ function DiscusiionMobile() {
           ))}
           <div ref={messagesEndRef} />
         </div>
-        <div className="sendmesssageButton">
+        <div className="sendmesssageButtonmobile">
           <input
             value={message}
             onChange={(e) => setmessage(e.target.value)}

@@ -124,13 +124,37 @@ body {
 .inbox-mobile {
   width: 95vw;
   margin-left: 2vw;
-  height: 87vh;
+  height: 86vh;
   display: flex;
+
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 30px;
-  background-color: #02e202;
+}
+.Homechat {
+  background-color: rgb(247, 247, 247);
+
+  width: 95vw;
+  margin-left: 2vw;
+  height: 86vh;
+  display: flex;
+
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.messagebox-mobile {
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  overflow-y: scroll;
+  display: flex;
+  padding-right: 10px;
+
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 .Discussebox-mobile {
   background-color: white;
@@ -156,6 +180,12 @@ body {
   width: 100%;
   height: 30px;
 }
+.sendmesssageButtonmobile {
+  display: flex;
+
+  width: 100%;
+  height: 30px;
+}
 .sendmesssageButton input {
   flex: 1;
   background-color: rgba(189, 183, 183, 0.5);
@@ -173,7 +203,7 @@ body {
 }
 .messagebox {
   width: 100%;
-  height: 85vh;
+
   overflow: hidden;
   overflow-y: scroll;
   display: flex;
@@ -954,6 +984,8 @@ a {
 }
 .Mobile-Homepages {
   display: flex;
+
+  justify-content: flex-start;
   flex-direction: column;
 }
 .navbar-mobile-logo img {
@@ -1297,7 +1329,7 @@ a {
   border-radius: 10px;
   z-index: 1;
   width: 160px;
-  height: 90vh;
+  height: 86vh;
   right: 0px;
   top: 52px;
 
