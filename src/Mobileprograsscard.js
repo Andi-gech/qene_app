@@ -35,6 +35,7 @@ function MobileProgrsscard({ course_id, index }) {
           style={{
             background: isDarkMode ? "black" : "white",
             color: isDarkMode ? "white" : "black",
+            boxShadow: isDarkMode ? "1px 2px 9px #F4AAB9" : "1px 2px 9px black",
           }}
         >
           <div className="circularProgress">

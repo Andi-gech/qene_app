@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useAuthHeader, useAuthUser } from "react-auth-kit";
 import {
   FaPaperPlane,
@@ -9,6 +9,8 @@ import {
 } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import ChatProfile from "./chatProfile";
+import DarkModeContext from "./DarkMODE";
+import Loadingcomponent from "./LoadingComponent";
 import Sendmessage from "./Message";
 import useMessagehook from "./useMessage";
 import useProfilehook from "./useProfiledatahook";
@@ -27,7 +29,7 @@ function DiscusiionMobile() {
 
   const [message, setmessage] = useState("");
   const [messages, setData] = useState(null);
-
+  const [isloading, setloading] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
       axios.defaults.headers.common["Authorization"] = authHeader();
@@ -45,6 +47,7 @@ function DiscusiionMobile() {
 
     fetchData();
   }, []);
+  const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
 
   const sendData = async (jasons) => {
     axios.defaults.headers.common["Authorization"] = authHeader();
@@ -73,28 +76,40 @@ function DiscusiionMobile() {
   }, [messages]);
   if (user && profile && messages) {
     return (
-      <div className="Mycourse-mobile">
+      <div
+        className="Mycourse-mobile"
+        style={{
+          background: isDarkMode ? "black" : "white",
+          color: isDarkMode ? "white" : "black",
+        }}
+      >
         <div className="inputpages">
           {messages.map((message, index) => (
             <>
               {message.user !== user?.id && (
                 <div className="sender">
-                  <ChatProfile id={message.user} />
+                  <span id="profilepics">
+                    <ChatProfile id={message.user} />
+                  </span>
                   <Sendmessage
-                    name={"rgb(21, 16, 31)"}
+                    left={"rgba(35,67,106,0.9500175070028011)"}
+                    right={"rgba(0,0,0,1)"}
                     message={message.message}
                     date={Date(message.timestamp)}
+                    sender={true}
                   />
                 </div>
               )}
               {message.user === user.id && (
                 <div className="reciever">
                   <Sendmessage
+                    left={"rgba(53,117,224,0.9500175070028011)"}
+                    right={"rgba(215,10,215,0.9528186274509804)"}
                     name={"#8A2BE2"}
+                    sender={false}
                     message={message.message}
                     date={message.timestamp}
                   />
-                  <ChatProfile id={message.user} />
                 </div>
               )}
             </>
@@ -113,6 +128,18 @@ function DiscusiionMobile() {
             <FaPaperPlane size={25} color="white" />
           </button>
         </div>
+      </div>
+    );
+  } else {
+    return (
+      <div
+        className="MobilGradeReport"
+        style={{
+          background: isDarkMode ? "black" : "white",
+          color: isDarkMode ? "white" : "black",
+        }}
+      >
+        <Loadingcomponent />
       </div>
     );
   }

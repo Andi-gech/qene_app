@@ -7,6 +7,7 @@ import DarkModeContext from "./DarkMODE";
 import { useContext } from "react";
 import AmharicModeContext from "./Amharicversion";
 import ClickAwayListener from "react-click-away-listener";
+import { FaMoon, FaSun } from "react-icons/fa";
 function Navbartab({ onclick }) {
   const signOut = useSignOut();
   const { data, isError, error, isFetching, refech } = useProfilehook("me");
@@ -38,21 +39,36 @@ function Navbartab({ onclick }) {
       <div
         className="navbartab"
         style={{
-          background: isDarkMode ? "black" : "white",
+          background: isDarkMode ? "#202123" : "white",
           color: isDarkMode ? "white" : "black",
         }}
       >
-        {data?.profile_pic && (
-          <img
-            src={
-              data?.profile_pic.startsWith("http")
-                ? data?.profile_pic
-                : `https://andigech.pythonanywhere.com${data?.profile_pic}`
-            }
-          />
-        )}
-        {!data?.profile_pic && <img src={profile_pic} />}
-        {user && <p id="name">@{user.username}</p>}
+        <div className="Profilewithdarkmode">
+          {isDarkMode && (
+            <div className="icons" onClick={toggleDarkMode}>
+              <FaSun color="white" size={19} />
+            </div>
+          )}
+          {!isDarkMode && (
+            <div className="icons" onClick={toggleDarkMode}>
+              <FaMoon />
+            </div>
+          )}
+          <div className="Profileimage">
+            {!data?.profile_pic && <img src={profile_pic} />}
+            {data?.profile_pic && (
+              <img
+                src={
+                  data?.profile_pic.startsWith("http")
+                    ? data?.profile_pic
+                    : `https://andigech.pythonanywhere.com${data?.profile_pic}`
+                }
+              />
+            )}
+
+            {user && <p id="name">@{user.username}</p>}
+          </div>
+        </div>
         <Link to="/">
           <p
             style={{
@@ -96,16 +112,6 @@ function Navbartab({ onclick }) {
             }}
           >
             {isAmharicMode ? "የግል ማህደር" : " Editprofile"}
-          </p>
-        </Link>
-        <Link>
-          <p
-            style={{
-              color: isDarkMode ? "white" : "black",
-            }}
-            onClick={toggleDarkMode}
-          >
-            Darkmode
           </p>
         </Link>
 

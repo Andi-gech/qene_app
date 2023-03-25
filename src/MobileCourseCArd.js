@@ -22,6 +22,7 @@ function Mobilecourscard({ name, coursepic, courseid, user, index }) {
             })`,
             backgroundSize: "cover",
             height: 200,
+
             width: 300,
           }}
         >

@@ -94,7 +94,7 @@ body {
   flex-direction: column;
   height: 200px;
   width: 200px;
-  box-shadow: rgba(69, 69, 77, 0.37) 0px 7px 29px 0px;
+  box-shadow: rgba(139, 139, 139, 0.37) 0px 7px 29px 0px;
   border-radius: 20px;
   overflow: hidden;
   margin: 5px;
@@ -191,6 +191,7 @@ body {
 }
 .Discussebox-mobile {
   background-color: white;
+  color: black;
   overflow-x: hidden;
   height: 90vh;
 }
@@ -208,6 +209,9 @@ body {
   justify-self: flex-end;
   display: flex;
   flex-direction: row;
+}
+#profilepics {
+  align-self: flex-end;
 }
 .sendmesssageButton {
   display: flex;
@@ -273,6 +277,7 @@ body {
 }
 .message p {
   font-size: 12px;
+  padding: 5px;
   align-self: flex-end;
   color: rgb(146, 145, 145);
 }
@@ -1351,8 +1356,33 @@ a {
     width: 0px;
   }
   to {
-    width: 160px;
+    width: 60vw;
   }
+}
+.Profilewithdarkmode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+
+  height: 100px;
+}
+.Profilewithdarkmode .icons {
+  align-self: start;
+  padding: 10px;
+}
+.Profilewithdarkmode .Profileimage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: flex-end;
+}
+.Profilewithdarkmode .Profileimage img {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
 }
 /*#111111*/
 .navbartab {
@@ -1363,19 +1393,16 @@ a {
 
   border-radius: 10px;
   z-index: 1;
-  width: 160px;
-  height: 86vh;
+  width: 60vw;
+  height: 90vh;
   right: 0px;
-  top: 52px;
+  top: 0px;
+  padding-top: 20px;
 
   animation-name: navbaranima;
-  animation-duration: 1s;
+  animation-duration: 0.02s;
 }
-.navbartab img {
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
-}
+
 .navbartab p {
   font-weight: bold;
   display: flex;
