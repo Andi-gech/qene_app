@@ -1,8 +1,17 @@
 import useProfilehook from "./useProfiledatahook";
 import profile_pic from "./assets/user-image-.png";
-function ChatProfile({id}) {
-    const { data, isError, error, isLoad, refech } = useProfilehook(id)
-    return ( <div className="profilepics"> {data?.profile_pic && (
+import { Link, useNavigate } from "react-router-dom";
+function ChatProfile({ id }) {
+  const { data, isError, error, isLoad, refech } = useProfilehook(id);
+  const navigate = useNavigate();
+
+  return (
+    <div
+      className="profilepics"
+      onClick={() => navigate(`/user/${id}`, { replace: false })}
+    >
+      {" "}
+      {data?.profile_pic && (
         <img
           src={
             data?.profile_pic.startsWith("http")
@@ -11,7 +20,9 @@ function ChatProfile({id}) {
           }
         />
       )}
-      {!data?.profile_pic && <img src={profile_pic} />}</div> );
+      {!data?.profile_pic && <img src={profile_pic} />}
+    </div>
+  );
 }
 
 export default ChatProfile;

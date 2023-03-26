@@ -37,6 +37,7 @@ import Discusiion from "./discussion";
 import Discusse from "./Discusse";
 import DiscusiionMobile from "./Discusionmobile";
 import DiscusseMobile from "./DiscusionDiscussMessage";
+import ShowProfile from "./ShowProfilemobile";
 
 function App() {
   const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
@@ -266,6 +267,14 @@ function App() {
                 element={
                   <RequireAuth loginPath="/login">
                     <MobilGradeReport />
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path="/user/:id"
+                element={
+                  <RequireAuth loginPath="/login">
+                    <ShowProfile />
                   </RequireAuth>
                 }
               />
