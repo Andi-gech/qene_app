@@ -19,6 +19,7 @@ function MobilGradeReport() {
           color: isDarkMode ? "white" : "black",
         }}
       >
+        {data.length == 0 && <p>you have no course enrolled</p>}
         {data.map((course, index) => (
           <Mobilegradecards index={index} id={course.course} />
         ))}

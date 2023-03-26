@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useSignIn } from "react-auth-kit";
 import { useIsAuthenticated } from "react-auth-kit";
 import { Link, Navigate } from "react-router-dom";
-
+import bannericon from "./assets/logo.jpg";
 import Mobilebutton from "./mobileButtogreen";
 function LoginMobile() {
   const isAuthenticated = useIsAuthenticated();
@@ -40,37 +40,14 @@ function LoginMobile() {
     return <Navigate to="/" />;
   } else {
     return (
-      <div
-        className="Signupcomponent"
-        style={{
-          color: "black",
-        }}
-      >
-        <h2
-          style={{
-            color: "black",
-          }}
-        >
-          WELLCOME TO QENE
-        </h2>
+      <div className="Signupcomponent">
+        <img id="loginimage" src={bannericon} />
         <div className="Sign-upbox">
-          <h3
-            style={{
-              color: "black",
-            }}
-          >
-            LOGIN
-          </h3>
+          <h3>LOGIN</h3>
 
           <form>
             <div className="MobileEachInput">
-              <p
-                style={{
-                  color: "black",
-                }}
-              >
-                username
-              </p>
+              <p>username</p>
               <input
                 placeholder="Username"
                 id="username"
@@ -82,13 +59,7 @@ function LoginMobile() {
             </div>
 
             <div className="MobileEachInput">
-              <p
-                style={{
-                  color: "black",
-                }}
-              >
-                password
-              </p>
+              <p>password</p>
               <input
                 placeholder="password"
                 id="password"

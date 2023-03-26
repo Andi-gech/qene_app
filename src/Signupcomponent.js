@@ -1,11 +1,13 @@
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useSignIn } from "react-auth-kit";
 import { useIsAuthenticated } from "react-auth-kit";
 import { Link, Navigate } from "react-router-dom";
 import vid from "./assets/s.jpg";
 import login from "./assets/logo.jpg";
 import Mobilebutton from "./mobileButtogreen";
+import bannericon from "./assets/logo.jpg";
+import DarkModeContext from "./DarkMODE";
 
 function SignUpMobileComponent() {
   const isAuthenticated = useIsAuthenticated();
@@ -18,6 +20,9 @@ function SignUpMobileComponent() {
   const [password, setpassword] = useState("");
   const signin = useSignIn();
   const [jasons, setjasons] = useState({});
+
+  const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
+
   const fetchData = async (jasonss) => {
     console.log(jasonss, "jasonsss");
     const res = await axios
@@ -47,8 +52,13 @@ function SignUpMobileComponent() {
     return <Navigate to="/" />;
   } else {
     return (
-      <div className="Signupcomponent">
-        <h2>WELLCOME TO QENE</h2>
+      <div
+        className="Signupcomponent"
+        style={{
+          color: isDarkMode ? "white" : "black",
+        }}
+      >
+        <img src={bannericon} />
         <div className="Sign-upbox">
           <h3>Signup</h3>
           {createed && (

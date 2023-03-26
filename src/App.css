@@ -1490,9 +1490,10 @@ a {
   font-weight: bold;
 }
 .Signupcomponent {
-  background-color: white;
   height: 100vh;
   display: flex;
+  background-color: rgb(5, 5, 5);
+  color: white;
   flex-direction: column;
   align-items: center;
 }
@@ -1515,28 +1516,62 @@ a {
 }
 .Sign-upbox {
   width: 97vw;
-  height: 55vh;
+  height: 65vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  color: white;
 }
 .MobileEachInput {
   margin-left: 14px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-top: 10px;
 
   width: 90%;
-  justify-content: space-between;
 }
+.MobileEachInput input:focus-within {
+  outline: 2px solid rgb(7, 106, 255);
+}
+.Signupcomponent img {
+  width: 150px;
+  filter: invert(100);
+}
+
 .MobileEachInput input {
-  width: 250px;
+  width: 230px;
   height: 40px;
-  border-radius: 20px;
-  border: 2px solid rgba(133, 131, 128, 0.301);
+  border-radius: 5px;
+
   align-self: flex-end;
+  border: 1px solid green !important;
+}
+.Start {
+  width: 95vw;
+  margin-top: 10px;
+
+  display: flex;
+  height: 40px;
+  margin-right: 30px;
+
+  justify-content: flex-end;
+}
+.Images {
+  height: 50vh;
+  width: 100vw;
+
+  display: flex;
+  flex-direction: row;
+}
+.Start button {
+  background-color: #00bfc5;
+  border-radius: 60px;
+  width: 100px;
 }
 .MobileEachInput p {
-  align-self: center;
+  align-self: flex-start;
+  margin-bottom: 10px;
+  color: white;
 }
 .MobileEachInput input :focus {
   border: 2px solid rgba(133, 131, 128, 0.301);

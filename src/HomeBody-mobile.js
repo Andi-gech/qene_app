@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useContext } from "react";
 import { FaLine } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -7,12 +8,17 @@ import Errrorcomponent from "./errorComponent";
 import Loadingcomponent from "./LoadingComponent";
 import Mobilebutton from "./mobileButtogreen";
 import MobileProgrsscard from "./Mobileprograsscard";
+import StartPageComponent from "./Startpagecomponent";
 import useMycoursedata from "./usefetchmycoursehook";
 
 function Homebodymobile({ onclick }) {
   console.log("home");
   const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
   const { isAmharicMode, toggleAmharicMode } = useContext(AmharicModeContext);
+  const [visible, setvisible] = useState(true);
+  const change = () => {
+    setvisible(!visible);
+  };
 
   const {
     data: mycoursedata,
@@ -30,17 +36,24 @@ function Homebodymobile({ onclick }) {
           color: isDarkMode ? "white" : "black",
         }}
       >
-        <div className="Mycourse-mobile-texts">
-          {isAmharicMode
-            ? `በ ${mycoursedata?.length} ኮርሶች ውስጥ ተመዝግበዋል`
-            : `You have ${mycoursedata?.length} course Enroll`}
-        </div>
-        {mycoursedata.length == 0 && (
-          <div className="Mycourse-mobile-nocontent-add">
-            <Link to={"courses"}>
-              <Mobilebutton name={"Add course"} />
-            </Link>
+        {!visible && (
+          <div className="Mycourse-mobile-texts">
+            {isAmharicMode
+              ? `በ ${mycoursedata?.length} ኮርሶች ውስጥ ተመዝግበዋል`
+              : `You have ${mycoursedata?.length} course Enroll`}
           </div>
+        )}
+        {mycoursedata.length == 0 && (
+          <>
+            {visible && <StartPageComponent onclick={change} />}
+            {!visible && (
+              <div className="Mycourse-mobile-nocontent-add">
+                <Link to={"courses"}>
+                  <Mobilebutton name={"Add course"} />
+                </Link>
+              </div>
+            )}
+          </>
         )}
         {mycoursedata?.length > 0 && (
           <div className="MobilecardList">

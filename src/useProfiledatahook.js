@@ -12,7 +12,7 @@ export default function useProfilehook(teacherid) {
         headers: { Authorization: authHeader() },
       }
     );
-    console.log("dd");
+    console.log("refeching");
     return res.data;
   };
   return useQuery(["profile", teacherid], () => fetchProfile(teacherid), {
